@@ -1,40 +1,45 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 class Solution {
-    public List<List<Integer>> shiftGrid(int[][] grid, int k) {
-        int m = grid.length;
-        int n = m > 0 ? grid[0].length : 0;
-        int temp;
-        while (k > 0) {
-            for (int i = 0; i < m; i++) {
-                temp = grid[i][n - 1];
-                for (int j = n - 1; j > 0; j--) {
-                    grid[i][j] = grid[i][j - 1];
+    public int numSpecial(int[][] mat) {
+        int ans = 0;
+        int m = mat.length;
+        int n = mat[0].length;
+
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                boolean flag = true;
+                if (mat[i][j] == 0) {
+                    flag = false;
                 }
-                grid[i][0] = temp;
+                // check row
+                for (int r = 0; r < m && flag; r++)
+                {
+                    if (r != i && mat[r][j] == 1) {
+                        flag = false;
+                        break;
+                    }
+                }
+                // check col
+                for (int c = 0; c < n && flag; c++)
+                {
+                    if (c != j && mat[i][c] == 1) {
+                        flag = false;
+                        break;
+                    }
+                }
 
+                if (flag) {
+                    ans++;
+                }
             }
-
-            temp = grid[m - 1][0];
-            for (int i = m - 1; i > 0; i--) {
-                grid[i][0] = grid[i - 1][0];
-            }
-            grid[0][0] = temp;
-
-            k--;
+            
         }
-        List<List<Integer>> ans = new ArrayList<>();
-        for (int[] g: grid) {
-            List<Integer> glist = Arrays.stream(g)
-                    .boxed()
-                    .collect(Collectors.toList());
-            ans.add(glist);
-        }
+        
+
         return ans;
     }
 }
