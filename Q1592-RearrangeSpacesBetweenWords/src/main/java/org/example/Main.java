@@ -2,45 +2,39 @@ package org.example;
 
 
 class Solution {
-    public int numSpecial(int[][] mat) {
-        int ans = 0;
-        int m = mat.length;
-        int n = mat[0].length;
+    public String reorderSpaces(String text) {
+        StringBuilder ans = new StringBuilder();
+        String[] words = text.trim().split("[ ]+");
+        int n = text.length();
+        int spaceCount = 0;
+        int wordCount = words.length;
+        int remainder = 0;
+        int spaces = 0;
 
-        for (int i = 0; i < m; i++)
+        for (int i = 0; i < n; i++)
         {
-            for (int j = 0; j < n; j++)
-            {
-                boolean flag = true;
-                if (mat[i][j] == 0) {
-                    flag = false;
-                }
-                // check row
-                for (int r = 0; r < m && flag; r++)
-                {
-                    if (r != i && mat[r][j] == 1) {
-                        flag = false;
-                        break;
-                    }
-                }
-                // check col
-                for (int c = 0; c < n && flag; c++)
-                {
-                    if (c != j && mat[i][c] == 1) {
-                        flag = false;
-                        break;
-                    }
-                }
-
-                if (flag) {
-                    ans++;
-                }
+            if (text.charAt(i) == ' ') {
+                spaceCount++;
             }
-            
         }
+        if (wordCount > 1) {
+            remainder = spaceCount % (wordCount - 1);
+            spaces = spaceCount / (wordCount - 1);
+        } else {
+            remainder = spaceCount;
+        }
+
+        for (int i = 0; i < wordCount; i++)
+        {
+            ans.append(words[i]);
+            if (i != wordCount - 1) {
+                ans.append(String.valueOf(' ').repeat(spaces));
+            }
+        }
+        ans.append(String.valueOf(' ').repeat(remainder));
         
 
-        return ans;
+        return ans.toString();
     }
 }
 
@@ -51,6 +45,7 @@ public class Main {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.printf("Hello and welcome!");
+        new Solution().reorderSpaces("  this   is  a sentence ");
 
         for (int i = 1; i <= 5; i++) {
             //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
