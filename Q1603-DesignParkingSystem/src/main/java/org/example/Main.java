@@ -1,42 +1,37 @@
 package org.example;
 
 
-class Solution {
-    public String reorderSpaces(String text) {
-        StringBuilder ans = new StringBuilder();
-        String[] words = text.trim().split("[ ]+");
-        int n = text.length();
-        int spaceCount = 0;
-        int wordCount = words.length;
-        int remainder = 0;
-        int spaces = 0;
+class ParkingSystem {
+    private int big;
+    private int medium;
+    private int small;
 
-        for (int i = 0; i < n; i++)
-        {
-            if (text.charAt(i) == ' ') {
-                spaceCount++;
-            }
+    public ParkingSystem(int big, int medium, int small) {
+        this.big = big;
+        this.medium = medium;
+        this.small = small;
+    }
+    
+    public boolean addCar(int carType) {
+        if (carType == 1 && this.big > 0) {
+            this.big--;
+            return true;
+        } else if (carType == 2 && this.medium > 0) {
+            this.medium--;
+            return true;
+        } else if (carType == 3 && this.small > 0) {
+            this.small--;
+            return true;
         }
-        if (wordCount > 1) {
-            remainder = spaceCount % (wordCount - 1);
-            spaces = spaceCount / (wordCount - 1);
-        } else {
-            remainder = spaceCount;
-        }
-
-        for (int i = 0; i < wordCount; i++)
-        {
-            ans.append(words[i]);
-            if (i != wordCount - 1) {
-                ans.append(String.valueOf(' ').repeat(spaces));
-            }
-        }
-        ans.append(String.valueOf(' ').repeat(remainder));
-        
-
-        return ans.toString();
+        return false;
     }
 }
+
+/**
+ * Your ParkingSystem object will be instantiated and called as such:
+ * ParkingSystem obj = new ParkingSystem(big, medium, small);
+ * boolean param_1 = obj.addCar(carType);
+ */
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
