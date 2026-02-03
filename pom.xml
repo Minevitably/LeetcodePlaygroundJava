@@ -13,6 +13,8 @@
         <module>Q1582-SpecialPositionsInABinaryMatrix</module>
         <module>Q1588-SumOfAllOddLengthSubarrays</module>
         <module>Q1592-RearrangeSpacesBetweenWords</module>
+        <module>Q1598-CrawlerLogFolder</module>
+        <module>Q1603-DesignParkingSystem</module>
     </modules>
 
     <properties>
