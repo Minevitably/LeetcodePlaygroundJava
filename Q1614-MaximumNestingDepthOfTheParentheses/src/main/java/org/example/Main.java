@@ -1,37 +1,28 @@
 package org.example;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 
-class ParkingSystem {
-    private int big;
-    private int medium;
-    private int small;
+class Solution {
+    public int maxDepth(String s) {
+        int depth = 0;
+        int maxDepth = 0;
+        Deque<Character> st = new ArrayDeque<>();
 
-    public ParkingSystem(int big, int medium, int small) {
-        this.big = big;
-        this.medium = medium;
-        this.small = small;
-    }
-    
-    public boolean addCar(int carType) {
-        if (carType == 1 && this.big > 0) {
-            this.big--;
-            return true;
-        } else if (carType == 2 && this.medium > 0) {
-            this.medium--;
-            return true;
-        } else if (carType == 3 && this.small > 0) {
-            this.small--;
-            return true;
+        for (char ch: s.toCharArray()) {
+            if (ch == '(') {
+                st.push(ch);
+                depth++;
+                maxDepth = Math.max(maxDepth, depth);
+            } else if (ch == ')') {
+                st.pop();
+                depth--;
+            }
         }
-        return false;
+
+        return maxDepth;
     }
 }
-
-/**
- * Your ParkingSystem object will be instantiated and called as such:
- * ParkingSystem obj = new ParkingSystem(big, medium, small);
- * boolean param_1 = obj.addCar(carType);
- */
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
