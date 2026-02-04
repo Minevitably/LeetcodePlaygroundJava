@@ -15,6 +15,8 @@
         <module>Q1592-RearrangeSpacesBetweenWords</module>
         <module>Q1598-CrawlerLogFolder</module>
         <module>Q1603-DesignParkingSystem</module>
+        <module>Q1608-SpecialArrayWithXElementsGreaterThanOrEqualX</module>
+        <module>Q1614-MaximumNestingDepthOfTheParentheses</module>
     </modules>
 
     <properties>
