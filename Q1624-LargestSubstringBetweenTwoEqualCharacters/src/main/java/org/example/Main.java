@@ -1,26 +1,35 @@
 package org.example;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.HashMap;
+import java.util.Map;
 
 class Solution {
-    public int maxDepth(String s) {
-        int depth = 0;
-        int maxDepth = 0;
-        Deque<Character> st = new ArrayDeque<>();
+    public int maxLengthBetweenEqualCharacters(String s) {
+        int maxLength = -1;
+        int n = s.length();
+        Map<Character, Integer> charMinIndex = new HashMap<>();
+        Map<Character, Integer> charMaxIndex = new HashMap<>();
+    
 
-        for (char ch: s.toCharArray()) {
-            if (ch == '(') {
-                st.push(ch);
-                depth++;
-                maxDepth = Math.max(maxDepth, depth);
-            } else if (ch == ')') {
-                st.pop();
-                depth--;
+        for (int i = 0; i < n; i++)
+        {
+            if (!charMinIndex.containsKey(s.charAt(i))) {
+                charMinIndex.put(s.charAt(i), i);
             }
+            if (!charMaxIndex.containsKey(s.charAt(i))) {
+                charMaxIndex.put(s.charAt(i), i);
+            }
+
+            charMinIndex.put(s.charAt(i), Math.min(charMinIndex.get(s.charAt(i)), i));
+            charMaxIndex.put(s.charAt(i), Math.max(charMaxIndex.get(s.charAt(i)), i));
+
         }
 
-        return maxDepth;
+        for (Map.Entry<Character, Integer> entry: charMinIndex.entrySet()) {
+            maxLength = Math.max(maxLength, charMaxIndex.get(entry.getKey()) - entry.getValue() - 1);
+        }
+
+        return maxLength;
     }
 }
 
