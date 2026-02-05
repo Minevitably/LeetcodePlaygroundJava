@@ -17,6 +17,8 @@
         <module>Q1603-DesignParkingSystem</module>
         <module>Q1608-SpecialArrayWithXElementsGreaterThanOrEqualX</module>
         <module>Q1614-MaximumNestingDepthOfTheParentheses</module>
+        <module>Q1619-MeanOfArrayAfterRemovingSomeElements</module>
+        <module>Q1624-LargestSubstringBetweenTwoEqualCharacters</module>
     </modules>
 
     <properties>
