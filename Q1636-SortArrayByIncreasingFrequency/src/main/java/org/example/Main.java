@@ -1,35 +1,42 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+record Pair(int key, int val) {
+}
+
 class Solution {
-    public int maxLengthBetweenEqualCharacters(String s) {
-        int maxLength = -1;
-        int n = s.length();
-        Map<Character, Integer> charMinIndex = new HashMap<>();
-        Map<Character, Integer> charMaxIndex = new HashMap<>();
-    
+    public int[] frequencySort(int[] nums) {
+        Map<Integer, Integer> m = new HashMap<>();
+        List<Pair> cnt = new ArrayList<>();
+        List<Integer> ans = new ArrayList<>();
 
-        for (int i = 0; i < n; i++)
-        {
-            if (!charMinIndex.containsKey(s.charAt(i))) {
-                charMinIndex.put(s.charAt(i), i);
-            }
-            if (!charMaxIndex.containsKey(s.charAt(i))) {
-                charMaxIndex.put(s.charAt(i), i);
-            }
-
-            charMinIndex.put(s.charAt(i), Math.min(charMinIndex.get(s.charAt(i)), i));
-            charMaxIndex.put(s.charAt(i), Math.max(charMaxIndex.get(s.charAt(i)), i));
-
+        for (int num: nums) {
+            m.put(num, m.getOrDefault(num, 0) + 1);
         }
 
-        for (Map.Entry<Character, Integer> entry: charMinIndex.entrySet()) {
-            maxLength = Math.max(maxLength, charMaxIndex.get(entry.getKey()) - entry.getValue() - 1);
+        for (var entry: m.entrySet()) {
+            cnt.add(new Pair(entry.getKey(), entry.getValue()));
         }
 
-        return maxLength;
+        cnt.sort((a, b) -> {
+            if (a.val() == b.val()) {
+                return Integer.compare(b.key(), a.key());
+            }
+            return Integer.compare(a.val(), b.val());
+        });
+
+        for (var pair: cnt) {
+            for (int i = 0; i < pair.val(); i++)
+            {
+                ans.add(pair.key());
+            }
+        }
+
+        return ans.stream().mapToInt(Integer::intValue).toArray();
     }
 }
 
