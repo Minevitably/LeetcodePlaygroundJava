@@ -19,6 +19,8 @@
         <module>Q1614-MaximumNestingDepthOfTheParentheses</module>
         <module>Q1619-MeanOfArrayAfterRemovingSomeElements</module>
         <module>Q1624-LargestSubstringBetweenTwoEqualCharacters</module>
+        <module>Q1629-SlowestKey</module>
+        <module>Q1636-SortArrayByIncreasingFrequency</module>
     </modules>
 
     <properties>
