@@ -21,6 +21,8 @@
         <module>Q1624-LargestSubstringBetweenTwoEqualCharacters</module>
         <module>Q1629-SlowestKey</module>
         <module>Q1636-SortArrayByIncreasingFrequency</module>
+        <module>Q1637-WidestVerticalAreaBetweenTwoPointsContainingNoPoints</module>
+        <module>Q1640-CheckArrayFormationThroughConcatenation</module>
     </modules>
 
     <properties>
