@@ -1,42 +1,33 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-record Pair(int key, int val) {
-}
-
 class Solution {
-    public int[] frequencySort(int[] nums) {
-        Map<Integer, Integer> m = new HashMap<>();
-        List<Pair> cnt = new ArrayList<>();
-        List<Integer> ans = new ArrayList<>();
+    public boolean canFormArray(int[] arr, int[][] pieces) {
+        int n = arr.length;
 
-        for (int num: nums) {
-            m.put(num, m.getOrDefault(num, 0) + 1);
-        }
-
-        for (var entry: m.entrySet()) {
-            cnt.add(new Pair(entry.getKey(), entry.getValue()));
-        }
-
-        cnt.sort((a, b) -> {
-            if (a.val() == b.val()) {
-                return Integer.compare(b.key(), a.key());
+        for (var piece: pieces) {
+            int i = -1;
+            int m = piece.length;
+            for (int k = 0; k < n; k++) {
+                if (arr[k] == piece[0]) {
+                    i = k;
+                    break;
+                }
             }
-            return Integer.compare(a.val(), b.val());
-        });
+            if (i == - 1) {
+                return false;
+            }
+            if (i + m > n) {
+                return false;
+            }
 
-        for (var pair: cnt) {
-            for (int i = 0; i < pair.val(); i++)
-            {
-                ans.add(pair.key());
+            for (int j = 1; j < m; j++) {
+                if (piece[j] != arr[i + j]) {
+                    return false;
+                }
             }
         }
 
-        return ans.stream().mapToInt(Integer::intValue).toArray();
+        return true;
     }
 }
 
