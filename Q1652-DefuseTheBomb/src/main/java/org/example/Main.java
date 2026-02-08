@@ -1,33 +1,37 @@
 package org.example;
 
+import java.util.Arrays;
+
 class Solution {
-    public boolean canFormArray(int[] arr, int[][] pieces) {
-        int n = arr.length;
+    public int[] decrypt(int[] code, int k) {
+        int n = code.length;
+        if (k == 0) {
+            Arrays.fill(code, 0);
+            return code;
+        }
+        int[] ans = Arrays.copyOf(code, n);
+        int sum = 0;
 
-        for (var piece: pieces) {
-            int i = -1;
-            int m = piece.length;
-            for (int k = 0; k < n; k++) {
-                if (arr[k] == piece[0]) {
-                    i = k;
-                    break;
-                }
-            }
-            if (i == - 1) {
-                return false;
-            }
-            if (i + m > n) {
-                return false;
-            }
 
-            for (int j = 1; j < m; j++) {
-                if (piece[j] != arr[i + j]) {
-                    return false;
-                }
-            }
+        int head = 1;
+        int tail = k;
+        if (k < 0) {
+            k = -k;
+            head = n - k;
+            tail = n - 1;
+        }
+        for (int i = head; i <= tail; i++) {
+            sum += code[i];
         }
 
-        return true;
+        for (int i = 0; i < n; i++) {
+            ans[i] = sum;
+            tail = (tail + 1) % n;
+            sum = sum - code[head] + code[tail];
+            head = (head + 1) % n;
+        }
+
+        return ans;
     }
 }
 
