@@ -23,6 +23,8 @@
         <module>Q1636-SortArrayByIncreasingFrequency</module>
         <module>Q1637-WidestVerticalAreaBetweenTwoPointsContainingNoPoints</module>
         <module>Q1640-CheckArrayFormationThroughConcatenation</module>
+        <module>Q1646-GetMaximumInGeneratedArray</module>
+        <module>Q1652-DefuseTheBomb</module>
     </modules>
 
     <properties>
