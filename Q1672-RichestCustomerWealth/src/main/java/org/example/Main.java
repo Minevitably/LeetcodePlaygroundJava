@@ -2,28 +2,18 @@ package org.example;
 
 
 class Solution {
-    public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
-        StringBuilder s1 = new StringBuilder();
-        StringBuilder s2 = new StringBuilder();
-
-        for (String word: word1) {
-            s1.append(word);
-        }
-        for (String word: word2) {
-            s2.append(word);
-        }
-
-        if (s1.length() != s2.length()) {
-            return false;
-        }
-        int n = s1.length();
-        for (int i = 0; i < n; i++) {
-            if (s1.charAt(i) != s2.charAt(i)) {
-                return false;
+    public int maximumWealth(int[][] accounts) {
+        int ans = 0;
+        
+        for (var banks: accounts) {
+            int sum = 0;
+            for (int bank: banks) {
+                sum += bank;
             }
+            ans = Math.max(ans, sum);
         }
 
-        return true;
+        return ans;
     }
 }
 
