@@ -27,6 +27,8 @@
         <module>Q1652-DefuseTheBomb</module>
         <module>Q1656-DesignAnOrderedStream</module>
         <module>Q1662-CheckIfTwoStringArraysAreEquivalent</module>
+        <module>Q1668-MaximumRepeatingSubstring</module>
+        <module>Q1672-RichestCustomerWealth</module>
     </modules>
 
     <properties>
