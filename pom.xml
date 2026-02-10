@@ -25,6 +25,8 @@
         <module>Q1640-CheckArrayFormationThroughConcatenation</module>
         <module>Q1646-GetMaximumInGeneratedArray</module>
         <module>Q1652-DefuseTheBomb</module>
+        <module>Q1656-DesignAnOrderedStream</module>
+        <module>Q1662-CheckIfTwoStringArraysAreEquivalent</module>
     </modules>
 
     <properties>
