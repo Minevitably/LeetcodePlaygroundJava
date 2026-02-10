@@ -1,37 +1,29 @@
 package org.example;
 
-import java.util.Arrays;
 
 class Solution {
-    public int[] decrypt(int[] code, int k) {
-        int n = code.length;
-        if (k == 0) {
-            Arrays.fill(code, 0);
-            return code;
-        }
-        int[] ans = Arrays.copyOf(code, n);
-        int sum = 0;
+    public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
+        StringBuilder s1 = new StringBuilder();
+        StringBuilder s2 = new StringBuilder();
 
-
-        int head = 1;
-        int tail = k;
-        if (k < 0) {
-            k = -k;
-            head = n - k;
-            tail = n - 1;
+        for (String word: word1) {
+            s1.append(word);
         }
-        for (int i = head; i <= tail; i++) {
-            sum += code[i];
+        for (String word: word2) {
+            s2.append(word);
         }
 
+        if (s1.length() != s2.length()) {
+            return false;
+        }
+        int n = s1.length();
         for (int i = 0; i < n; i++) {
-            ans[i] = sum;
-            tail = (tail + 1) % n;
-            sum = sum - code[head] + code[tail];
-            head = (head + 1) % n;
+            if (s1.charAt(i) != s2.charAt(i)) {
+                return false;
+            }
         }
 
-        return ans;
+        return true;
     }
 }
 
