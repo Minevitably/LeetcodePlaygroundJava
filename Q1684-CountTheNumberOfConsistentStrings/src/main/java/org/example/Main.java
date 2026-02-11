@@ -1,19 +1,30 @@
 package org.example;
 
+import java.util.HashSet;
+import java.util.Set;
 
 class Solution {
-    public int maximumWealth(int[][] accounts) {
-        int ans = 0;
-        
-        for (var banks: accounts) {
-            int sum = 0;
-            for (int bank: banks) {
-                sum += bank;
+    public int countConsistentStrings(String allowed, String[] words) {
+        Set<Character> charSet = new HashSet<>();
+        for (char ch: allowed.toCharArray()) {
+            charSet.add(ch);
+        }
+        int count = 0;
+
+        for (String word: words) {
+            boolean flag = true;
+            for (char ch: word.toCharArray()) {
+                if (!charSet.contains(ch)) {
+                    flag = false;
+                    break;
+                }
             }
-            ans = Math.max(ans, sum);
+            if (flag) {
+                count++;
+            }
         }
 
-        return ans;
+        return count;
     }
 }
 
