@@ -29,6 +29,8 @@
         <module>Q1662-CheckIfTwoStringArraysAreEquivalent</module>
         <module>Q1668-MaximumRepeatingSubstring</module>
         <module>Q1672-RichestCustomerWealth</module>
+        <module>Q1678-GoalParserInterpretation</module>
+        <module>Q1684-CountTheNumberOfConsistentStrings</module>
     </modules>
 
     <properties>
