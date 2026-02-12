@@ -31,6 +31,8 @@
         <module>Q1672-RichestCustomerWealth</module>
         <module>Q1678-GoalParserInterpretation</module>
         <module>Q1684-CountTheNumberOfConsistentStrings</module>
+        <module>Q1688-CountOfMatchesInTournament</module>
+        <module>Q1694-ReformatPhoneNumber</module>
     </modules>
 
     <properties>
