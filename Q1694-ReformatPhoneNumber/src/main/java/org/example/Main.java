@@ -1,30 +1,35 @@
 package org.example;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 class Solution {
-    public int countConsistentStrings(String allowed, String[] words) {
-        Set<Character> charSet = new HashSet<>();
-        for (char ch: allowed.toCharArray()) {
-            charSet.add(ch);
-        }
-        int count = 0;
+    public String reformatNumber(String number) {
+        number = number.replace(" ", "").replace("-", "");
 
-        for (String word: words) {
-            boolean flag = true;
-            for (char ch: word.toCharArray()) {
-                if (!charSet.contains(ch)) {
-                    flag = false;
-                    break;
-                }
-            }
-            if (flag) {
-                count++;
-            }
+        int n = number.length();
+        List<String> blocks = new ArrayList<>();
+        // the last of us.
+        int m = n;
+        int i = 0;
+
+        while (m > 4) {
+            blocks.add(number.substring(i, i + 3));
+            i += 3;
+            m -= 3;
         }
 
-        return count;
+        if (m == 2) {
+            blocks.add(number.substring(i, i + 2));
+        } else if (m == 3) {
+            blocks.add(number.substring(i, i + 3));
+        } else if (m == 4) {
+            blocks.add(number.substring(i, i + 2));
+            i += 2;
+            blocks.add(number.substring(i, i +2));
+        }
+
+        return String.join("-", blocks);
     }
 }
 
