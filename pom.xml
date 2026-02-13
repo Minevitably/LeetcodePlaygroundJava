@@ -33,6 +33,8 @@
         <module>Q1684-CountTheNumberOfConsistentStrings</module>
         <module>Q1688-CountOfMatchesInTournament</module>
         <module>Q1694-ReformatPhoneNumber</module>
+        <module>Q1700-NumberOfStudentsUnableToEatLunch</module>
+        <module>Q1704-DetermineIfStringHalvesAreAlike</module>
     </modules>
 
     <properties>
