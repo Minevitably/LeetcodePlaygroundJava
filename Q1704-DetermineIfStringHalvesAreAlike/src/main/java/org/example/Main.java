@@ -1,35 +1,31 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 class Solution {
-    public String reformatNumber(String number) {
-        number = number.replace(" ", "").replace("-", "");
+    public boolean halvesAreAlike(String s) {
+        int n = s.length();
+        int left = 0;
+        int right = 0;
+        int mid = n / 2;
+        Set<Character> vowels = new HashSet<>(
+            Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')
+        );
 
-        int n = number.length();
-        List<String> blocks = new ArrayList<>();
-        // the last of us.
-        int m = n;
-        int i = 0;
-
-        while (m > 4) {
-            blocks.add(number.substring(i, i + 3));
-            i += 3;
-            m -= 3;
+        for (int i = 0; i < n; i++) {
+            if (!vowels.contains(s.charAt(i))) {
+                continue;
+            }
+            if (i < mid) {
+                left++;
+            } else {
+                right++;
+            }
         }
 
-        if (m == 2) {
-            blocks.add(number.substring(i, i + 2));
-        } else if (m == 3) {
-            blocks.add(number.substring(i, i + 3));
-        } else if (m == 4) {
-            blocks.add(number.substring(i, i + 2));
-            i += 2;
-            blocks.add(number.substring(i, i +2));
-        }
-
-        return String.join("-", blocks);
+        return left == right;
     }
 }
 
