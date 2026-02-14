@@ -35,6 +35,8 @@
         <module>Q1694-ReformatPhoneNumber</module>
         <module>Q1700-NumberOfStudentsUnableToEatLunch</module>
         <module>Q1704-DetermineIfStringHalvesAreAlike</module>
+        <module>Q1710-MaximumUnitsOnATruck</module>
+        <module>Q1716-CalculateMoneyInLeetcodeBank</module>
     </modules>
 
     <properties>
