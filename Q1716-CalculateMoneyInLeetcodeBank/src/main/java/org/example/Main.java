@@ -1,31 +1,20 @@
 package org.example;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 class Solution {
-    public boolean halvesAreAlike(String s) {
-        int n = s.length();
-        int left = 0;
-        int right = 0;
-        int mid = n / 2;
-        Set<Character> vowels = new HashSet<>(
-            Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')
-        );
+    public int totalMoney(int n) {
+        int sum = 0;
+        int N = n / 7;
+        int m = n % 7;
+        int x = (n - 1) % 7 + 1;
 
-        for (int i = 0; i < n; i++) {
-            if (!vowels.contains(s.charAt(i))) {
-                continue;
-            }
-            if (i < mid) {
-                left++;
-            } else {
-                right++;
-            }
+        sum += (49 * N + 7 * N * N) / 2;
+        // remaining days
+        for (int i = 0; i < m; i++) {
+            sum += x + N - i;
         }
 
-        return left == right;
+        return sum;
     }
 }
 
