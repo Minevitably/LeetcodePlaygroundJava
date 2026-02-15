@@ -37,6 +37,8 @@
         <module>Q1704-DetermineIfStringHalvesAreAlike</module>
         <module>Q1710-MaximumUnitsOnATruck</module>
         <module>Q1716-CalculateMoneyInLeetcodeBank</module>
+        <module>Q1720-DecodeXORedArray</module>
+        <module>Q1725-NumberOfRectanglesThatCanFormTheLargestSquare</module>
     </modules>
 
     <properties>
