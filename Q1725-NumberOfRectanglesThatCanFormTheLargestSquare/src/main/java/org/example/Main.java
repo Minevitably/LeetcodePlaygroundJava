@@ -2,19 +2,21 @@ package org.example;
 
 
 class Solution {
-    public int totalMoney(int n) {
-        int sum = 0;
-        int N = n / 7;
-        int m = n % 7;
-        int x = (n - 1) % 7 + 1;
+    public int countGoodRectangles(int[][] rectangles) {
+        int count = 0;
+        int maxLen = 0;
 
-        sum += (49 * N + 7 * N * N) / 2;
-        // remaining days
-        for (int i = 0; i < m; i++) {
-            sum += x + N - i;
+        for (var rect: rectangles) {
+            int k = Math.min(rect[0], rect[1]);
+            if (k == maxLen) {
+                count++;
+            } else if (k > maxLen) {
+                maxLen = k;
+                count = 1;
+            }
         }
 
-        return sum;
+        return count;
     }
 }
 
