@@ -39,6 +39,8 @@
         <module>Q1716-CalculateMoneyInLeetcodeBank</module>
         <module>Q1720-DecodeXORedArray</module>
         <module>Q1725-NumberOfRectanglesThatCanFormTheLargestSquare</module>
+        <module>Q1732-FindTheHighestAltitude</module>
+        <module>Q1736-LatestTimeByReplacingHiddenDigits</module>
     </modules>
 
     <properties>
