@@ -2,21 +2,43 @@ package org.example;
 
 
 class Solution {
-    public int countGoodRectangles(int[][] rectangles) {
-        int count = 0;
-        int maxLen = 0;
+    public String maximumTime(String time) {
+        char[] timeChar = time.toCharArray();
+        char h0 = timeChar[0];
+        char h1 = timeChar[1];
+        char m0 = timeChar[3];
+        char m1 = timeChar[4];
 
-        for (var rect: rectangles) {
-            int k = Math.min(rect[0], rect[1]);
-            if (k == maxLen) {
-                count++;
-            } else if (k > maxLen) {
-                maxLen = k;
-                count = 1;
+        if (h0 == '?' && h1 == '?') {
+            h0 = '2';
+            h1 = '3';
+        } else {
+            if (h0 == '?') {
+                h0 = h1 > '3' ?  '1' : '2';
+            }
+            if (h1 == '?') {
+                h1 = h0 > '1' ? '3' : '9';
             }
         }
 
-        return count;
+        if (m0 == '?' && m1 == '?') {
+            m0 = '5';
+            m1 = '9';
+        } else {
+            if (m0 == '?') {
+                m0 = '5';
+            }
+            if (m1 == '?') {
+                m1 = '9';
+            }
+        }
+
+        timeChar[0] = h0;
+        timeChar[1] = h1;
+        timeChar[3] = m0;
+        timeChar[4] = m1;
+
+        return new String(timeChar);
     }
 }
 
