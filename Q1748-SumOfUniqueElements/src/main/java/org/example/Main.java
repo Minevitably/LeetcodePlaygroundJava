@@ -1,44 +1,25 @@
 package org.example;
 
+import java.util.HashMap;
+import java.util.Map;
 
 class Solution {
-    public String maximumTime(String time) {
-        char[] timeChar = time.toCharArray();
-        char h0 = timeChar[0];
-        char h1 = timeChar[1];
-        char m0 = timeChar[3];
-        char m1 = timeChar[4];
+    public int sumOfUnique(int[] nums) {
+        Map<Integer, Integer> um = new HashMap<>();
 
-        if (h0 == '?' && h1 == '?') {
-            h0 = '2';
-            h1 = '3';
-        } else {
-            if (h0 == '?') {
-                h0 = h1 > '3' ?  '1' : '2';
-            }
-            if (h1 == '?') {
-                h1 = h0 > '1' ? '3' : '9';
+        int sum = 0;
+        for (int v: nums) {
+            um.put(v, um.getOrDefault(v, 0) + 1);
+
+        }
+
+        for (var entry: um.entrySet()) {
+            if (entry.getValue() == 1) {
+                sum += entry.getKey();
             }
         }
 
-        if (m0 == '?' && m1 == '?') {
-            m0 = '5';
-            m1 = '9';
-        } else {
-            if (m0 == '?') {
-                m0 = '5';
-            }
-            if (m1 == '?') {
-                m1 = '9';
-            }
-        }
-
-        timeChar[0] = h0;
-        timeChar[1] = h1;
-        timeChar[3] = m0;
-        timeChar[4] = m1;
-
-        return new String(timeChar);
+        return sum;
     }
 }
 
