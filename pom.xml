@@ -41,6 +41,8 @@
         <module>Q1725-NumberOfRectanglesThatCanFormTheLargestSquare</module>
         <module>Q1732-FindTheHighestAltitude</module>
         <module>Q1736-LatestTimeByReplacingHiddenDigits</module>
+        <module>Q1742-MaximumNumberOfBallsInABox</module>
+        <module>Q1748-SumOfUniqueElements</module>
     </modules>
 
     <properties>
