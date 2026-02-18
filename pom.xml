@@ -43,6 +43,8 @@
         <module>Q1736-LatestTimeByReplacingHiddenDigits</module>
         <module>Q1742-MaximumNumberOfBallsInABox</module>
         <module>Q1748-SumOfUniqueElements</module>
+        <module>Q1752-CheckIfArrayIsSortedAndRotated</module>
+        <module>Q1758-MinimumChangesToMakeAlternatingBinaryString</module>
     </modules>
 
     <properties>
