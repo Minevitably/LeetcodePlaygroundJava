@@ -1,25 +1,33 @@
 package org.example;
 
-import java.util.HashMap;
-import java.util.Map;
 
 class Solution {
-    public int sumOfUnique(int[] nums) {
-        Map<Integer, Integer> um = new HashMap<>();
+    public int minOperations(String s) {
+        int n = s.length();
+        // odd -> '0', even -> '1'
+        int count1 = 0;
+        // odd -> '1', even -> '0'
+        int count2 = 0;
 
-        int sum = 0;
-        for (int v: nums) {
-            um.put(v, um.getOrDefault(v, 0) + 1);
-
-        }
-
-        for (var entry: um.entrySet()) {
-            if (entry.getValue() == 1) {
-                sum += entry.getKey();
+        for (int i = 0; i < n; i++) {
+            if (i % 2 == 0) {
+                if (s.charAt(i) == '0') {
+                    count1++;
+                } else {
+                    count2++;
+                }
+            } else {
+                if (s.charAt(i) == '1') {
+                    count1++;
+                } else {
+                    count2++;
+                }
             }
+
         }
 
-        return sum;
+
+        return Math.min(count1, count2);
     }
 }
 
