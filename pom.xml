@@ -45,6 +45,8 @@
         <module>Q1748-SumOfUniqueElements</module>
         <module>Q1752-CheckIfArrayIsSortedAndRotated</module>
         <module>Q1758-MinimumChangesToMakeAlternatingBinaryString</module>
+        <module>Q1763-LongestNiceSubstring</module>
+        <module>Q1768-MergeStringsAlternately</module>
     </modules>
 
     <properties>
