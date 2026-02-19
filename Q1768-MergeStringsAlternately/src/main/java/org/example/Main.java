@@ -2,32 +2,27 @@ package org.example;
 
 
 class Solution {
-    public int minOperations(String s) {
-        int n = s.length();
-        // odd -> '0', even -> '1'
-        int count1 = 0;
-        // odd -> '1', even -> '0'
-        int count2 = 0;
+    public String mergeAlternately(String word1, String word2) {
+        int n1 = word1.length();
+        int n2 = word2.length();
+        StringBuilder ans = new StringBuilder();
+        String tail;
+        int minLen;
 
-        for (int i = 0; i < n; i++) {
-            if (i % 2 == 0) {
-                if (s.charAt(i) == '0') {
-                    count1++;
-                } else {
-                    count2++;
-                }
-            } else {
-                if (s.charAt(i) == '1') {
-                    count1++;
-                } else {
-                    count2++;
-                }
-            }
-
+        if (n1 > n2) {
+            minLen = n2;
+            tail = word1.substring(minLen);
+        } else {
+            minLen = n1;
+            tail = word2.substring(minLen);
         }
 
+        for (int i = 0; i < minLen; i++) {
+            ans.append(word1.charAt(i));
+            ans.append(word2.charAt(i));
+        }
 
-        return Math.min(count1, count2);
+        return ans + tail;
     }
 }
 
