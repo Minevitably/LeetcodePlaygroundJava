@@ -2,27 +2,25 @@ package org.example;
 
 
 class Solution {
-    public String mergeAlternately(String word1, String word2) {
-        int n1 = word1.length();
-        int n2 = word2.length();
-        StringBuilder ans = new StringBuilder();
-        String tail;
-        int minLen;
+    public int nearestValidPoint(int x, int y, int[][] points) {
+        int minIndex = -1;
+        int minDistance = Integer.MAX_VALUE;
+        int n = points.length;
 
-        if (n1 > n2) {
-            minLen = n2;
-            tail = word1.substring(minLen);
-        } else {
-            minLen = n1;
-            tail = word2.substring(minLen);
+        for (int i = 0; i < n; i++) {
+            int x1 = points[i][0];
+            int y1 = points[i][1];
+            // valid
+            if (x1 == x || y1 == y) {
+                int d = Math.abs(x - x1) + Math.abs(y - y1);
+                if (d < minDistance) {
+                    minDistance = d;
+                    minIndex = i;
+                }
+            }
         }
 
-        for (int i = 0; i < minLen; i++) {
-            ans.append(word1.charAt(i));
-            ans.append(word2.charAt(i));
-        }
-
-        return ans + tail;
+        return minIndex;
     }
 }
 
