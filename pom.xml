@@ -49,6 +49,8 @@
         <module>Q1768-MergeStringsAlternately</module>
         <module>Q1773-CountItemsMatchingARule</module>
         <module>Q1779-FindNearestPointThatHastheSameXOrYCoordinate</module>
+        <module>Q1784-CheckIfBinaryStringHasAtMostOneSegmentOfOnes</module>
+        <module>Q1790-CheckIfOneStringSwapCanMakeStringsEqual</module>
     </modules>
 
     <properties>
