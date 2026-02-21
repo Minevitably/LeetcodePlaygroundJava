@@ -1,26 +1,28 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
 
 class Solution {
-    public int nearestValidPoint(int x, int y, int[][] points) {
-        int minIndex = -1;
-        int minDistance = Integer.MAX_VALUE;
-        int n = points.length;
+    public boolean areAlmostEqual(String s1, String s2) {
+        int n = s1.length();
+        List<Integer> indices = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
-            int x1 = points[i][0];
-            int y1 = points[i][1];
-            // valid
-            if (x1 == x || y1 == y) {
-                int d = Math.abs(x - x1) + Math.abs(y - y1);
-                if (d < minDistance) {
-                    minDistance = d;
-                    minIndex = i;
-                }
+            if (s1.charAt(i) != s2.charAt(i)) {
+                indices.add(i);
             }
         }
-
-        return minIndex;
+        int m = indices.size();
+        
+        if (m == 0) {
+            return true;
+        } else if (m == 2) {
+            return s1.charAt(indices.get(0)) == s2.charAt(indices.get(1)) && 
+                   s1.charAt(indices.get(1)) == s2.charAt(indices.get(0));
+        } else {
+            return false;
+        }
     }
 }
 
