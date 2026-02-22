@@ -51,6 +51,8 @@
         <module>Q1779-FindNearestPointThatHastheSameXOrYCoordinate</module>
         <module>Q1784-CheckIfBinaryStringHasAtMostOneSegmentOfOnes</module>
         <module>Q1790-CheckIfOneStringSwapCanMakeStringsEqual</module>
+        <module>Q1791-FindCenterOfStarGraph</module>
+        <module>Q1796-SecondLargestDigitInAString</module>
     </modules>
 
     <properties>
