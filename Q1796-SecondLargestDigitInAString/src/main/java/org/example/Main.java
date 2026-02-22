@@ -1,28 +1,27 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 class Solution {
-    public boolean areAlmostEqual(String s1, String s2) {
-        int n = s1.length();
-        List<Integer> indices = new ArrayList<>();
-
-        for (int i = 0; i < n; i++) {
-            if (s1.charAt(i) != s2.charAt(i)) {
-                indices.add(i);
+    public int secondHighest(String s) {
+        Set<Integer> numSet = new HashSet<>();
+        for (char ch: s.toCharArray()) {
+            if (ch >= '0' && ch <= '9') {
+                numSet.add((int)(ch - '0'));
             }
         }
-        int m = indices.size();
-        
-        if (m == 0) {
-            return true;
-        } else if (m == 2) {
-            return s1.charAt(indices.get(0)) == s2.charAt(indices.get(1)) && 
-                   s1.charAt(indices.get(1)) == s2.charAt(indices.get(0));
-        } else {
-            return false;
+        List<Integer> numList = new ArrayList<>(numSet);
+        int n = numList.size();
+        numList.sort(null);
+
+        if (n >= 2) {
+            return numList.get(n - 2);
         }
+
+        return -1;
     }
 }
 
