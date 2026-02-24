@@ -1,27 +1,32 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 class Solution {
-    public int secondHighest(String s) {
-        Set<Integer> numSet = new HashSet<>();
-        for (char ch: s.toCharArray()) {
-            if (ch >= '0' && ch <= '9') {
-                numSet.add((int)(ch - '0'));
+    private String removeLeadingZeros(String str) {
+        int n = str.length();
+        int i = 0;
+
+        while (i < n - 1 && str.charAt(i) == '0') {
+            i++;
+        }
+
+        return str.substring(i);
+    }
+    public int numDifferentIntegers(String word) {
+        Set<String> s = new HashSet<>();
+
+        word = word.replaceAll("[a-zA-Z]", " ");
+        String[] numStrs = word.split(" ");
+
+        for (String numStr: numStrs) {
+            if (!numStr.isEmpty()) {
+                s.add(removeLeadingZeros(numStr));
             }
         }
-        List<Integer> numList = new ArrayList<>(numSet);
-        int n = numList.size();
-        numList.sort(null);
 
-        if (n >= 2) {
-            return numList.get(n - 2);
-        }
-
-        return -1;
+        return s.size();
     }
 }
 
@@ -29,6 +34,7 @@ class Solution {
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        (new Solution()).numDifferentIntegers("a123bc34d8ef34");
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.printf("Hello and welcome!");
