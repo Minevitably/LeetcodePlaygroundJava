@@ -55,6 +55,8 @@
         <module>Q1796-SecondLargestDigitInAString</module>
         <module>Q1800-MaximumAscendingSubarraySum</module>
         <module>Q1805-NumberOfDifferentIntegersInAString</module>
+        <module>Q1812-DetermineColorOfAChessboardSquare</module>
+        <module>Q1816-TruncateSentence</module>
     </modules>
 
     <properties>
