@@ -53,6 +53,8 @@
         <module>Q1790-CheckIfOneStringSwapCanMakeStringsEqual</module>
         <module>Q1791-FindCenterOfStarGraph</module>
         <module>Q1796-SecondLargestDigitInAString</module>
+        <module>Q1800-MaximumAscendingSubarraySum</module>
+        <module>Q1805-NumberOfDifferentIntegersInAString</module>
     </modules>
 
     <properties>
