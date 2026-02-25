@@ -1,11 +1,19 @@
 package org.example;
 
-import java.util.Arrays;
 
 class Solution {
-    public String truncateSentence(String s, int k) {
-        String[] words = s.split(" ");
-        return String.join(" ", Arrays.copyOfRange(words, 0, k));
+    public int minOperations(int[] nums) {
+        int n = nums.length;
+        int count = 0;
+
+        for (int i = 1; i < n; i++) {
+            if (nums[i - 1] >= nums[i]) {
+                count += nums[i - 1] - nums[i] + 1;
+                nums[i] = nums[i - 1] + 1;
+            }
+        }
+
+        return count;
     }
 }
 
