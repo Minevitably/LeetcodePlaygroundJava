@@ -57,6 +57,8 @@
         <module>Q1805-NumberOfDifferentIntegersInAString</module>
         <module>Q1812-DetermineColorOfAChessboardSquare</module>
         <module>Q1816-TruncateSentence</module>
+        <module>Q1822-SignOfTheProductOfAnArray</module>
+        <module>Q1827-MinimumOperationsToMakeTheArrayIncreasing</module>
     </modules>
 
     <properties>
