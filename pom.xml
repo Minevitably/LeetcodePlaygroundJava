@@ -59,6 +59,8 @@
         <module>Q1816-TruncateSentence</module>
         <module>Q1822-SignOfTheProductOfAnArray</module>
         <module>Q1827-MinimumOperationsToMakeTheArrayIncreasing</module>
+        <module>Q1832-CheckIfTheSentenceIsPangram</module>
+        <module>Q1837-SumOfDigitsInBaseK</module>
     </modules>
 
     <properties>
