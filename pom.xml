@@ -61,6 +61,8 @@
         <module>Q1827-MinimumOperationsToMakeTheArrayIncreasing</module>
         <module>Q1832-CheckIfTheSentenceIsPangram</module>
         <module>Q1837-SumOfDigitsInBaseK</module>
+        <module>Q1844-ReplaceAllDigitsWithCharacters</module>
+        <module>Q1848-MinimumDistanceToTheTargetElement</module>
     </modules>
 
     <properties>
