@@ -2,15 +2,23 @@ package org.example;
 
 
 class Solution {
-    public int sumBase(int n, int k) {
-        int sum = 0;
+    public int getMinDistance(int[] nums, int target, int start) {
+        int left = start;
+        int right = start;
+        int n = nums.length;
+        
+        while (left >= 0 || right < n) {
+            if ((left >= 0 && nums[left] == target) ||
+                (right < n && nums[right] == target)) {
+                return right - start;
+            }
 
-        while (n > 0) {
-            sum += n % k;
-            n /= k;
+            left--;
+            right++;
         }
-
-        return sum;
+        
+        // never happen
+        return -1;
     }
 }
 
