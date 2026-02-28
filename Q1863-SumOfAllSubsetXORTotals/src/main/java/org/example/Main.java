@@ -2,23 +2,12 @@ package org.example;
 
 
 class Solution {
-    public int getMinDistance(int[] nums, int target, int start) {
-        int left = start;
-        int right = start;
-        int n = nums.length;
-        
-        while (left >= 0 || right < n) {
-            if ((left >= 0 && nums[left] == target) ||
-                (right < n && nums[right] == target)) {
-                return right - start;
-            }
-
-            left--;
-            right++;
+    public int subsetXORSum(int[] nums) {
+        int total = 0;
+        for (int num : nums) {
+            total |= num;  // Step 1: Compute bitwise OR of all numbers
         }
-        
-        // never happen
-        return -1;
+        return total * (1 << (nums.length - 1));  // Step 2: Multiply by 2^(n-1)
     }
 }
 
