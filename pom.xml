@@ -63,6 +63,8 @@
         <module>Q1837-SumOfDigitsInBaseK</module>
         <module>Q1844-ReplaceAllDigitsWithCharacters</module>
         <module>Q1848-MinimumDistanceToTheTargetElement</module>
+        <module>Q1859-SortingTheSentence</module>
+        <module>Q1863-SumOfAllSubsetXORTotals</module>
     </modules>
 
     <properties>
