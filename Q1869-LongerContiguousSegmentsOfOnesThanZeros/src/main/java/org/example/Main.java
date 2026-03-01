@@ -2,12 +2,27 @@ package org.example;
 
 
 class Solution {
-    public int subsetXORSum(int[] nums) {
-        int total = 0;
-        for (int num : nums) {
-            total |= num;  // Step 1: Compute bitwise OR of all numbers
+    public boolean checkZeroOnes(String s) {
+        int longestZeros = 0;
+        int longestOnes = 0;
+        int n = s.length();
+
+        int i = 0;
+        while (i < n) {
+            int count = 0;
+            char ch = s.charAt(i);
+            while (i < n && s.charAt(i) == ch) {
+                count++;
+                i++;
+            }
+            if (ch == '0') {
+                longestZeros = Math.max(longestZeros, count);
+            } else {
+                longestOnes = Math.max(longestOnes, count);
+            }
         }
-        return total * (1 << (nums.length - 1));  // Step 2: Multiply by 2^(n-1)
+
+        return longestOnes > longestZeros;
     }
 }
 
