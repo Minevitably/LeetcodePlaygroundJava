@@ -1,28 +1,27 @@
 package org.example;
 
-
 class Solution {
-    public boolean checkZeroOnes(String s) {
-        int longestZeros = 0;
-        int longestOnes = 0;
-        int n = s.length();
+    public boolean isSumEqual(String firstWord, String secondWord, String targetWord) {
+        char[] firstWordArr = firstWord.toCharArray();
+        char[] secondWordArr = secondWord.toCharArray();
+        char[] targetWordArr = targetWord.toCharArray();
 
-        int i = 0;
-        while (i < n) {
-            int count = 0;
-            char ch = s.charAt(i);
-            while (i < n && s.charAt(i) == ch) {
-                count++;
-                i++;
-            }
-            if (ch == '0') {
-                longestZeros = Math.max(longestZeros, count);
-            } else {
-                longestOnes = Math.max(longestOnes, count);
-            }
+
+        for (int i = 0; i < firstWord.length(); i++) {
+            firstWordArr[i] = (char)(firstWordArr[i] - 'a' + '0');
+        }
+        for (int i = 0; i < secondWord.length(); i++) {
+            secondWordArr[i] = (char)(secondWordArr[i] - 'a' + '0');
+        }
+        for (int i = 0; i < targetWord.length(); i++) {
+            targetWordArr[i] = (char)(targetWordArr[i] - 'a' + '0');
         }
 
-        return longestOnes > longestZeros;
+        firstWord = new String(firstWordArr);
+        secondWord = new String(secondWordArr);
+        targetWord = new String(targetWordArr);
+
+        return Integer.valueOf(firstWord) + Integer.valueOf(secondWord) == Integer.valueOf(targetWord);
     }
 }
 
