@@ -1,27 +1,24 @@
 package org.example;
 
+import java.util.Arrays;
+
 class Solution {
-    public boolean isSumEqual(String firstWord, String secondWord, String targetWord) {
-        char[] firstWordArr = firstWord.toCharArray();
-        char[] secondWordArr = secondWord.toCharArray();
-        char[] targetWordArr = targetWord.toCharArray();
-
-
-        for (int i = 0; i < firstWord.length(); i++) {
-            firstWordArr[i] = (char)(firstWordArr[i] - 'a' + '0');
-        }
-        for (int i = 0; i < secondWord.length(); i++) {
-            secondWordArr[i] = (char)(secondWordArr[i] - 'a' + '0');
-        }
-        for (int i = 0; i < targetWord.length(); i++) {
-            targetWordArr[i] = (char)(targetWordArr[i] - 'a' + '0');
+    public boolean isCovered(int[][] ranges, int left, int right) {
+        int[] rangesArr = new int[51];
+        Arrays.fill(rangesArr, 0);
+        for (var range: ranges) {
+            for (int i = range[0]; i <= range[1]; i++) {
+                rangesArr[i] = 1;
+            }
         }
 
-        firstWord = new String(firstWordArr);
-        secondWord = new String(secondWordArr);
-        targetWord = new String(targetWordArr);
+        for (int i = left; i <= right; i++) {
+            if (rangesArr[i] == 0) {
+                return false;
+            }
+        }
 
-        return Integer.valueOf(firstWord) + Integer.valueOf(secondWord) == Integer.valueOf(targetWord);
+        return true;
     }
 }
 
