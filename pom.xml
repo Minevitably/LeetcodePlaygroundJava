@@ -13,6 +13,8 @@
         <module>Q1869-LongerContiguousSegmentsOfOnesThanZeros</module>
         <module>Q1876-SubstringsOfSizeThreeWithDistinctCharacters</module>
         <module>Q1880-CheckIfWordEqualsSummationOfTwoWords</module>
+        <module>Q1886-DetermineWhetherMatrixCanBeObtainedByRotation</module>
+        <module>Q1893-CheckIfAllTheIntegersInARangeAreCovered</module>
     </modules>
 
     <properties>
