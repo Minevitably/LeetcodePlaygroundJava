@@ -17,6 +17,8 @@
         <module>Q1893-CheckIfAllTheIntegersInARangeAreCovered</module>
         <module>Q1897-RedistributeCharactersToMakeAllStringsEqual</module>
         <module>Q1903-LargestOddNumberInString</module>
+        <module>Q1909-RemoveOneElementToMakeTheArrayStrictlyIncreasing</module>
+        <module>Q1913-MaximumProductDifferenceBetweenTwoPairs</module>
     </modules>
 
     <properties>
