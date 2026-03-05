@@ -1,24 +1,21 @@
 package org.example;
 
-import java.util.Arrays;
 
 class Solution {
-    public boolean isCovered(int[][] ranges, int left, int right) {
-        int[] rangesArr = new int[51];
-        Arrays.fill(rangesArr, 0);
-        for (var range: ranges) {
-            for (int i = range[0]; i <= range[1]; i++) {
-                rangesArr[i] = 1;
+    public String largestOddNumber(String num) {
+        int i = -1;
+        int n = num.length();
+
+        for (int j = 0; j < n; j++) {
+            if ((int)(num.charAt(j)) % 2 == 1) {
+                i = j;
             }
         }
 
-        for (int i = left; i <= right; i++) {
-            if (rangesArr[i] == 0) {
-                return false;
-            }
+        if (i == -1) {
+            return "";
         }
-
-        return true;
+        return num.substring(0, i + 1);
     }
 }
 
