@@ -2,20 +2,41 @@ package org.example;
 
 
 class Solution {
-    public String largestOddNumber(String num) {
-        int i = -1;
-        int n = num.length();
+    public int maxProductDifference(int[] nums) {
+        int w = 0;
+        int x = -1;
+        int y = 0;
+        int z = -1;
+        int n = nums.length;
 
-        for (int j = 0; j < n; j++) {
-            if ((int)(num.charAt(j)) % 2 == 1) {
-                i = j;
+        for (int i = 0; i < n; i++) {
+            if (nums[i] > nums[w]) {
+                w = i;
+            }
+            if (nums[i] < nums[y]) {
+                y = i;
             }
         }
 
-        if (i == -1) {
-            return "";
+        for (int i = 0; i < n; i++) {
+            if (i == w || i == y) {
+                continue;
+            }
+            if (x == -1) {
+                x = i;
+            }
+            if (z == -1) {
+                z = i;
+            }
+            if (nums[i] > nums[x]) {
+                x = i;
+            }
+            if (nums[i] < nums[z]) {
+                z = i;
+            }
         }
-        return num.substring(0, i + 1);
+
+        return nums[w] * nums[x] - nums[y] * nums[z];
     }
 }
 
