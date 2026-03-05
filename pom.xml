@@ -15,6 +15,8 @@
         <module>Q1880-CheckIfWordEqualsSummationOfTwoWords</module>
         <module>Q1886-DetermineWhetherMatrixCanBeObtainedByRotation</module>
         <module>Q1893-CheckIfAllTheIntegersInARangeAreCovered</module>
+        <module>Q1897-RedistributeCharactersToMakeAllStringsEqual</module>
+        <module>Q1903-LargestOddNumberInString</module>
     </modules>
 
     <properties>
