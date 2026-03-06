@@ -19,6 +19,8 @@
         <module>Q1903-LargestOddNumberInString</module>
         <module>Q1909-RemoveOneElementToMakeTheArrayStrictlyIncreasing</module>
         <module>Q1913-MaximumProductDifferenceBetweenTwoPairs</module>
+        <module>Q1920-BuildArrayFromPermutation</module>
+        <module>Q1925-CountSquareSumTriples</module>
     </modules>
 
     <properties>
