@@ -2,41 +2,20 @@ package org.example;
 
 
 class Solution {
-    public int maxProductDifference(int[] nums) {
-        int w = 0;
-        int x = -1;
-        int y = 0;
-        int z = -1;
-        int n = nums.length;
+    public int countTriples(int n) {
+        int count = 0;
 
-        for (int i = 0; i < n; i++) {
-            if (nums[i] > nums[w]) {
-                w = i;
-            }
-            if (nums[i] < nums[y]) {
-                y = i;
+        for (int a = 1; a <= n; a++) {
+            for (int b = 1; b <= n; b++) {
+                for (int c = 1; c <= n; c++) {
+                    if (a * a + b * b == c * c) {
+                        count++;
+                    }
+                }
             }
         }
 
-        for (int i = 0; i < n; i++) {
-            if (i == w || i == y) {
-                continue;
-            }
-            if (x == -1) {
-                x = i;
-            }
-            if (z == -1) {
-                z = i;
-            }
-            if (nums[i] > nums[x]) {
-                x = i;
-            }
-            if (nums[i] < nums[z]) {
-                z = i;
-            }
-        }
-
-        return nums[w] * nums[x] - nums[y] * nums[z];
+        return count;
     }
 }
 
