@@ -21,6 +21,8 @@
         <module>Q1913-MaximumProductDifferenceBetweenTwoPairs</module>
         <module>Q1920-BuildArrayFromPermutation</module>
         <module>Q1925-CountSquareSumTriples</module>
+        <module>Q1929-ConcatenationOfArray</module>
+        <module>Q1935-MaximumNumberOfWordsYouCanType</module>
     </modules>
 
     <properties>
