@@ -1,17 +1,28 @@
 package org.example;
 
+import java.util.HashSet;
+import java.util.Set;
 
 class Solution {
-    public int countTriples(int n) {
+    public int canBeTypedWords(String text, String brokenLetters) {
+        String[] words = text.split(" ");
+        Set<Character> brokenSet = new HashSet<>();
+        for (char ch: brokenLetters.toCharArray()) {
+            brokenSet.add(ch);
+        }
+
         int count = 0;
 
-        for (int a = 1; a <= n; a++) {
-            for (int b = 1; b <= n; b++) {
-                for (int c = 1; c <= n; c++) {
-                    if (a * a + b * b == c * c) {
-                        count++;
-                    }
+        for (var word: words) {
+            boolean flag = true;
+            for (char ch: word.toCharArray()) {
+                if (brokenSet.contains(ch)) {
+                    flag = false;
+                    break;
                 }
+            }
+            if (flag) {
+                count++;
             }
         }
 
