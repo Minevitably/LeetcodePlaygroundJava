@@ -23,6 +23,8 @@
         <module>Q1925-CountSquareSumTriples</module>
         <module>Q1929-ConcatenationOfArray</module>
         <module>Q1935-MaximumNumberOfWordsYouCanType</module>
+        <module>Q1941-CheckIfAllCharactersHaveEqualNumberOfOccurrences</module>
+        <module>Q1945-SumOfDigitsOfStringAfterConvert</module>
     </modules>
 
     <properties>
