@@ -1,32 +1,31 @@
 package org.example;
 
-import java.util.HashSet;
-import java.util.Set;
 
 class Solution {
-    public int canBeTypedWords(String text, String brokenLetters) {
-        String[] words = text.split(" ");
-        Set<Character> brokenSet = new HashSet<>();
-        for (char ch: brokenLetters.toCharArray()) {
-            brokenSet.add(ch);
-        }
+    public int getLucky(String s, int k) {
+        int convert = 0;
+        int n = s.length();
 
-        int count = 0;
-
-        for (var word: words) {
-            boolean flag = true;
-            for (char ch: word.toCharArray()) {
-                if (brokenSet.contains(ch)) {
-                    flag = false;
-                    break;
-                }
-            }
-            if (flag) {
-                count++;
+        for (int i = 0; i < n; i++) {
+            int pos = (int)(s.charAt(i)- 'a' + 1);
+            if (pos > 9) {
+                convert += pos / 10 + pos % 10;
+            } else {
+                convert += pos;
             }
         }
+        
+        for (int i = 0; i < k - 1; i++) {
+            int sum = 0;
+            while (convert > 0) {
+                sum += convert % 10;
+                convert /= 10;
+            }
+            convert = sum;
+        }
 
-        return count;
+
+        return convert;
     }
 }
 
