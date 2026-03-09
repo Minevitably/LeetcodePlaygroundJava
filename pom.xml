@@ -25,6 +25,8 @@
         <module>Q1935-MaximumNumberOfWordsYouCanType</module>
         <module>Q1941-CheckIfAllCharactersHaveEqualNumberOfOccurrences</module>
         <module>Q1945-SumOfDigitsOfStringAfterConvert</module>
+        <module>Q1952-ThreeDivisors</module>
+        <module>Q1957-DeleteCharactersToMakeFancyString</module>
     </modules>
 
     <properties>
