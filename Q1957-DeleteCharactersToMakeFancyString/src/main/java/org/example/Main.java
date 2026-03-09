@@ -2,30 +2,25 @@ package org.example;
 
 
 class Solution {
-    public int getLucky(String s, int k) {
-        int convert = 0;
+    public String makeFancyString(String s) {
+        int count = 1;
         int n = s.length();
-
-        for (int i = 0; i < n; i++) {
-            int pos = (int)(s.charAt(i)- 'a' + 1);
-            if (pos > 9) {
-                convert += pos / 10 + pos % 10;
-            } else {
-                convert += pos;
-            }
-        }
+        StringBuilder ans = new StringBuilder();
         
-        for (int i = 0; i < k - 1; i++) {
-            int sum = 0;
-            while (convert > 0) {
-                sum += convert % 10;
-                convert /= 10;
+        ans.append(s.charAt(0));
+
+        for (int i = 1; i < n; i ++) {
+            if (s.charAt(i) == s.charAt(i - 1)) {
+                count++;
+            } else {
+                count = 1;
             }
-            convert = sum;
+            if (count <= 2) {
+                ans.append(s.charAt(i));
+            }
         }
 
-
-        return convert;
+        return ans.toString();
     }
 }
 
