@@ -2,25 +2,16 @@ package org.example;
 
 
 class Solution {
-    public String makeFancyString(String s) {
-        int count = 1;
-        int n = s.length();
-        StringBuilder ans = new StringBuilder();
-        
-        ans.append(s.charAt(0));
+    public int numOfStrings(String[] patterns, String word) {
+        int count = 0;
 
-        for (int i = 1; i < n; i ++) {
-            if (s.charAt(i) == s.charAt(i - 1)) {
+        for (String pattern: patterns) {
+            if (word.indexOf(pattern) != -1) {
                 count++;
-            } else {
-                count = 1;
-            }
-            if (count <= 2) {
-                ans.append(s.charAt(i));
             }
         }
 
-        return ans.toString();
+        return count;
     }
 }
 
