@@ -27,6 +27,8 @@
         <module>Q1945-SumOfDigitsOfStringAfterConvert</module>
         <module>Q1952-ThreeDivisors</module>
         <module>Q1957-DeleteCharactersToMakeFancyString</module>
+        <module>Q1961-CheckIfStringIsAPrefixOfArray</module>
+        <module>Q1967-NumberOfStringsThatAppearAsSubstringsInWord</module>
     </modules>
 
     <properties>
