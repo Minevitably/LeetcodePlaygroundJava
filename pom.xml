@@ -29,6 +29,8 @@
         <module>Q1957-DeleteCharactersToMakeFancyString</module>
         <module>Q1961-CheckIfStringIsAPrefixOfArray</module>
         <module>Q1967-NumberOfStringsThatAppearAsSubstringsInWord</module>
+        <module>Q1971-FindIfPathExistsInGraph</module>
+        <module>Q1974-MinimumTimeToTypeWordUsingSpecialTypewriter</module>
     </modules>
 
     <properties>
