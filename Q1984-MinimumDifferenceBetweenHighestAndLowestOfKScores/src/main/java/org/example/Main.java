@@ -1,19 +1,19 @@
 package org.example;
 
+import java.util.Arrays;
 
 class Solution {
-    public int minTimeToType(String word) {
-        char p = 'a';
-        int t = 0;
+    public int minimumDifference(int[] nums, int k) {
+        Arrays.sort(nums);
 
-        for (char c: word.toCharArray()) {
-            int absT = Math.abs((int)(p - c));
-            p = c;
-            int minT = Math.min(absT, 26 - absT);
-            t += minT + 1;
+        int minVal = nums[k - 1] - nums[0];
+        int n = nums.length;
+        
+        for (int i = k; i < n; i++) {
+            minVal = Math.min(minVal, nums[i] - nums[i - (k - 1)]);
         }
 
-        return t;
+        return minVal;
     }
 }
 
