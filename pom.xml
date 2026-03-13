@@ -33,6 +33,8 @@
         <module>Q1974-MinimumTimeToTypeWordUsingSpecialTypewriter</module>
         <module>Q1979-FindGreatestCommonDivisorOfArray</module>
         <module>Q1984-MinimumDifferenceBetweenHighestAndLowestOfKScores</module>
+        <module>Q1991-FindTheMiddleIndexInArray</module>
+        <module>Q1995-CountSpecialQuadruplets</module>
     </modules>
 
     <properties>
