@@ -2,18 +2,14 @@ package org.example;
 
 
 class Solution {
-    public int countQuadruplets(int[] nums) {
+    public int countKDifference(int[] nums, int k) {
         int n = nums.length;
         int count = 0;
 
-        for (int a = 0; a < n; a++) {
-            for (int b = a + 1; b < n; b++) {
-                for (int c = b + 1; c < n; c++) {
-                    for (int d = c + 1; d < n; d++) {
-                        if (nums[a] + nums[b] + nums[c] == nums[d]) {
-                            count++;
-                        }
-                    }
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (Math.abs(nums[i] - nums[j]) == k) {
+                    count++;
                 }
             }
         }
