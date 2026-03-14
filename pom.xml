@@ -35,6 +35,8 @@
         <module>Q1984-MinimumDifferenceBetweenHighestAndLowestOfKScores</module>
         <module>Q1991-FindTheMiddleIndexInArray</module>
         <module>Q1995-CountSpecialQuadruplets</module>
+        <module>Q2000-ReversePrefixOfWord</module>
+        <module>Q2006-CountNumberOfPairsWithAbsoluteDifferenceK</module>
     </modules>
 
     <properties>
