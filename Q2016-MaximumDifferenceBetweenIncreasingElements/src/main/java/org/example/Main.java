@@ -2,19 +2,19 @@ package org.example;
 
 
 class Solution {
-    public int countKDifference(int[] nums, int k) {
+    public int maximumDifference(int[] nums) {
+        int minVal = nums[0];
+        int maxD = -1;
         int n = nums.length;
-        int count = 0;
 
-        for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (Math.abs(nums[i] - nums[j]) == k) {
-                    count++;
-                }
+        for (int i = 1; i < n; i++) {
+            if (nums[i] > minVal) {
+                maxD = Math.max(maxD, nums[i] - minVal);
             }
+            minVal = Math.min(minVal, nums[i]);
         }
 
-        return count;
+        return maxD;
     }
 }
 
