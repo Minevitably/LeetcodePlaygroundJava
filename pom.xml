@@ -37,6 +37,8 @@
         <module>Q1995-CountSpecialQuadruplets</module>
         <module>Q2000-ReversePrefixOfWord</module>
         <module>Q2006-CountNumberOfPairsWithAbsoluteDifferenceK</module>
+        <module>Q2011-FinalValueOfVariableAfterPerformingOperations</module>
+        <module>Q2016-MaximumDifferenceBetweenIncreasingElements</module>
     </modules>
 
     <properties>
