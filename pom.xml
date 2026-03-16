@@ -39,6 +39,7 @@
         <module>Q2006-CountNumberOfPairsWithAbsoluteDifferenceK</module>
         <module>Q2011-FinalValueOfVariableAfterPerformingOperations</module>
         <module>Q2016-MaximumDifferenceBetweenIncreasingElements</module>
+        <module>Q2022-Convert1DArrayInto2DArray</module>
     </modules>
 
     <properties>
