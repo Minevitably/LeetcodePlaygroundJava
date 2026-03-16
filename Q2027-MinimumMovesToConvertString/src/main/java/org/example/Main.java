@@ -1,22 +1,27 @@
 package org.example;
 
+import java.util.HashSet;
+import java.util.Set;
 
 class Solution {
-    public int minimumMoves(String s) {
-        int i = 0;
+    public int lengthOfLongestSubstring(String s) {
+        Set<Character> sub = new HashSet<>();
+        int maxLen = 0;
         int n = s.length();
-        int count = 0;
 
-        while (i < n) {
-            if (s.charAt(i) == 'X') {
-                i += 3;
-                count++;
-            } else {
-                i++;
+        for (int i = 0; i < n; i++) {
+            char ch = s.charAt(i);
+            if (sub.contains(ch)) {
+                sub.clear();
+                for (int j = i - 1; j >= 0 && s.charAt(j) != ch; j--) {
+                    sub.add(s.charAt(j));
+                }
             }
+            sub.add(ch);
+            maxLen = Math.max(maxLen, (int)(sub.size()));
         }
 
-        return count;
+        return maxLen;
     }
 }
 
