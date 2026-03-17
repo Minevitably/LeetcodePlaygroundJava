@@ -1,22 +1,19 @@
 package org.example;
 
+import java.util.Arrays;
 
 class Solution {
-    public int minimumMoves(String s) {
-        int i = 0;
-        int n = s.length();
-        int count = 0;
+    public int minMovesToSeat(int[] seats, int[] students) {
+        Arrays.sort(seats);
+        Arrays.sort(students);
+        int moves = 0;
+        int n = seats.length;
 
-        while (i < n) {
-            if (s.charAt(i) == 'X') {
-                i += 3;
-                count++;
-            } else {
-                i++;
-            }
+        for (int i = 0; i < n; i++) {
+            moves += Math.abs(seats[i] - students[i]);
         }
 
-        return count;
+        return moves;
     }
 }
 
