@@ -41,6 +41,8 @@
         <module>Q2016-MaximumDifferenceBetweenIncreasingElements</module>
         <module>Q2022-Convert1DArrayInto2DArray</module>
         <module>Q2027-MinimumMovesToConvertString</module>
+        <module>Q2032-TwoOutOfThree</module>
+        <module>Q2037-MinimumNumberOfMovesToSeatEveryone</module>
     </modules>
 
     <properties>
