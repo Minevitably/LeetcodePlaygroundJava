@@ -43,6 +43,8 @@
         <module>Q2027-MinimumMovesToConvertString</module>
         <module>Q2032-TwoOutOfThree</module>
         <module>Q2037-MinimumNumberOfMovesToSeatEveryone</module>
+        <module>Q2042-CheckIfNumbersAreAscendingInASentence</module>
+        <module>Q2047-NumberOfValidWordsInASentence</module>
     </modules>
 
     <properties>
