@@ -45,6 +45,8 @@
         <module>Q2037-MinimumNumberOfMovesToSeatEveryone</module>
         <module>Q2042-CheckIfNumbersAreAscendingInASentence</module>
         <module>Q2047-NumberOfValidWordsInASentence</module>
+        <module>Q2053-KthDistinctStringInAnArray</module>
+        <module>Q2057-SmallestIndexWithEqualValue</module>
     </modules>
 
     <properties>
