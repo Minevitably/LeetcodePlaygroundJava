@@ -2,61 +2,16 @@ package org.example;
 
 
 class Solution {
-    private boolean isValid(String s) {
-        if (s.isEmpty()) {
-            return false;
-        }
-        int hyphens = 0;
-        int puncs = 0;
-        int n = s.length();
+    public int smallestEqual(int[] nums) {
+        int n = nums.length;
 
         for (int i = 0; i < n; i++) {
-            char ch = s.charAt(i);
-            if (Character.isDigit(ch)) {
-                return false;
-            }
-
-            if (ch == '-') {
-                hyphens++;
-                if (i - 1 < 0 || i + 1 > n - 1) {
-                    return false;
-                }
-                if (hyphens > 1) {
-                    return false;
-                }
-                if (!Character.isLetter(s.charAt(i - 1))) {
-                    return false;
-                }
-                if (!Character.isLetter(s.charAt(i + 1))) {
-                    return false;
-                }
-            }
-
-            if (ch == '!' || ch == '.' || ch == ',') {
-                puncs++;
-                if (puncs > 1) {
-                    return false;
-                }
-                if (i != n - 1) {
-                    return false;
-                }
+            if (i % 10 == nums[i]) {
+                return i;
             }
         }
         
-        return true;
-    }
-
-    public int countValidWords(String sentence) {
-        String[] tokens = sentence.split(" ");
-        int count = 0;
-
-        for (String token: tokens) {
-            if (isValid(token)) {
-                count++;
-            }
-        }
-
-        return count;
+        return -1;
     }
 }
 
