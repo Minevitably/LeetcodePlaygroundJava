@@ -1,17 +1,25 @@
 package org.example;
 
+import java.util.Arrays;
 
 class Solution {
-    public int smallestEqual(int[] nums) {
-        int n = nums.length;
+    public boolean checkAlmostEquivalent(String word1, String word2) {
+        int[] cnt = new int[26];
+        Arrays.fill(cnt, 0);
 
-        for (int i = 0; i < n; i++) {
-            if (i % 10 == nums[i]) {
-                return i;
+        for (char ch: word1.toCharArray()) {
+            cnt[(int)(ch - 'a')]++;
+        }
+        for (char ch: word2.toCharArray()) {
+            cnt[(int)(ch - 'a')]--;
+        }
+        for (int v: cnt) {
+            if (Math.abs(v) > 3) {
+                return false;
             }
         }
-        
-        return -1;
+
+        return true;
     }
 }
 
