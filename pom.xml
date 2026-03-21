@@ -47,6 +47,8 @@
         <module>Q2047-NumberOfValidWordsInASentence</module>
         <module>Q2053-KthDistinctStringInAnArray</module>
         <module>Q2057-SmallestIndexWithEqualValue</module>
+        <module>Q2062-CountVowelSubstringsOfAString</module>
+        <module>Q2068-CheckWhetherTwoStringsAreAlmostEquivalent</module>
     </modules>
 
     <properties>
