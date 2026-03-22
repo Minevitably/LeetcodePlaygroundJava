@@ -1,29 +1,22 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 class Solution {
-    public int maxDistance(int[] colors) {
-        int lr = -1;
-        int rl = -1;
-        int n = colors.length;
-        int pivot = colors[0];
+    public List<Integer> targetIndices(int[] nums, int target) {
+        List<Integer> ans = new ArrayList<>();
+        int n = nums.length;
 
-        for (int i = n - 1; i >= 0; i--) {
-            if (colors[i] != pivot) {
-                lr = i;
-                break;
-            }
-        }
-
-        // maybe no need to update pivot = colors[n - 1]
+        Arrays.sort(nums);
         for (int i = 0; i < n; i++) {
-            if (colors[i] != pivot) {
-                rl = n - 1 - i;
-                break;
+            if (target == nums[i]) {
+                ans.add(i);
             }
         }
 
-        return Math.max(lr, rl);
+        return ans;
     }
 }
 
