@@ -1,25 +1,29 @@
 package org.example;
 
-import java.util.Arrays;
 
 class Solution {
-    public boolean checkAlmostEquivalent(String word1, String word2) {
-        int[] cnt = new int[26];
-        Arrays.fill(cnt, 0);
+    public int maxDistance(int[] colors) {
+        int lr = -1;
+        int rl = -1;
+        int n = colors.length;
+        int pivot = colors[0];
 
-        for (char ch: word1.toCharArray()) {
-            cnt[(int)(ch - 'a')]++;
-        }
-        for (char ch: word2.toCharArray()) {
-            cnt[(int)(ch - 'a')]--;
-        }
-        for (int v: cnt) {
-            if (Math.abs(v) > 3) {
-                return false;
+        for (int i = n - 1; i >= 0; i--) {
+            if (colors[i] != pivot) {
+                lr = i;
+                break;
             }
         }
 
-        return true;
+        // maybe no need to update pivot = colors[n - 1]
+        for (int i = 0; i < n; i++) {
+            if (colors[i] != pivot) {
+                rl = n - 1 - i;
+                break;
+            }
+        }
+
+        return Math.max(lr, rl);
     }
 }
 
