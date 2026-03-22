@@ -51,6 +51,8 @@
         <module>Q2068-CheckWhetherTwoStringsAreAlmostEquivalent</module>
         <module>Q2073-TimeNeededToBuyTickets</module>
         <module>Q2078-TwoFurthestHousesWithDifferentColors</module>
+        <module>Q2085-CountCommonWordsWithOneOccurrence</module>
+        <module>Q2089-FindTargetIndicesAfterSortingArray</module>
     </modules>
 
     <properties>
