@@ -49,6 +49,8 @@
         <module>Q2057-SmallestIndexWithEqualValue</module>
         <module>Q2062-CountVowelSubstringsOfAString</module>
         <module>Q2068-CheckWhetherTwoStringsAreAlmostEquivalent</module>
+        <module>Q2073-TimeNeededToBuyTickets</module>
+        <module>Q2078-TwoFurthestHousesWithDifferentColors</module>
     </modules>
 
     <properties>
