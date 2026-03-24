@@ -53,6 +53,8 @@
         <module>Q2078-TwoFurthestHousesWithDifferentColors</module>
         <module>Q2085-CountCommonWordsWithOneOccurrence</module>
         <module>Q2089-FindTargetIndicesAfterSortingArray</module>
+        <module>Q2094-Finding3-DigitEvenNumbers</module>
+        <module>Q2099-FindSubsequenceOfLengthKWithTheLargestSum</module>
     </modules>
 
     <properties>
