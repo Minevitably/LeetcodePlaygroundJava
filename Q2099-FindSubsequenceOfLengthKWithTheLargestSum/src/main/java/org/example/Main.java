@@ -24,15 +24,11 @@ class Solution {
             pairs.add(new Pair(i, nums[i]));
         }
         // sort of values
-        pairs.sort((a, b) -> {
-            return Integer.compare(b.v, a.v);
-        });
+        pairs.sort((a, b) -> Integer.compare(b.v, a.v));
 
         // sort the first k elements of keys
         List<Pair> kPairs = pairs.subList(0, k);
-        kPairs.sort((a, b) -> {
-            return Integer.compare(a.k, b.k);
-        });
+        kPairs.sort((a, b) -> Integer.compare(a.k, b.k));
 
         for (int i = 0; i < k; i++) {
             ans[i] = kPairs.get(i).v;
