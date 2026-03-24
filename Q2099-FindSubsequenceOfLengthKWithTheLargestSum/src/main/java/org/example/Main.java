@@ -4,16 +4,38 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+class Pair {
+    public int k;
+    public int v;
+    public Pair(int k, int v) {
+        this.k = k;
+        this.v = v;
+    }
+}
+
 class Solution {
-    public List<Integer> targetIndices(int[] nums, int target) {
-        List<Integer> ans = new ArrayList<>();
+    public int[] maxSubsequence(int[] nums, int k) {
+        List<Pair> pairs = new ArrayList<>();
+        int[] ans = new int[k];
+        Arrays.fill(ans, 0);
         int n = nums.length;
 
-        Arrays.sort(nums);
         for (int i = 0; i < n; i++) {
-            if (target == nums[i]) {
-                ans.add(i);
-            }
+            pairs.add(new Pair(i, nums[i]));
+        }
+        // sort of values
+        pairs.sort((a, b) -> {
+            return Integer.compare(b.v, a.v);
+        });
+
+        // sort the first k elements of keys
+        List<Pair> kPairs = pairs.subList(0, k);
+        kPairs.sort((a, b) -> {
+            return Integer.compare(a.k, b.k);
+        });
+
+        for (int i = 0; i < k; i++) {
+            ans[i] = kPairs.get(i).v;
         }
 
         return ans;
