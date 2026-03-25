@@ -1,13 +1,8 @@
 package org.example;
 
 class Solution {
-    public String firstPalindrome(String[] words) {
-        for (var word: words) {
-            if (new StringBuilder(word).reverse().toString().equals(word)) {
-                return word;
-            }
-        }
-        return "";
+    public boolean isSameAfterReversals(int num) {
+        return num == 0 || num % 10 != 0;
     }
 }
 
