@@ -55,6 +55,8 @@
         <module>Q2089-FindTargetIndicesAfterSortingArray</module>
         <module>Q2094-Finding3-DigitEvenNumbers</module>
         <module>Q2099-FindSubsequenceOfLengthKWithTheLargestSum</module>
+        <module>Q2103-RingsAndRods</module>
+        <module>Q2108-FindFirstPalindromicStringInTheArray</module>
     </modules>
 
     <properties>
