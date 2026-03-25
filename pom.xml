@@ -57,6 +57,8 @@
         <module>Q2099-FindSubsequenceOfLengthKWithTheLargestSum</module>
         <module>Q2103-RingsAndRods</module>
         <module>Q2108-FindFirstPalindromicStringInTheArray</module>
+        <module>Q2114-MaximumNumberOfWordsFoundInSentences</module>
+        <module>Q2119-ANumberAfterADoubleReversal</module>
     </modules>
 
     <properties>
