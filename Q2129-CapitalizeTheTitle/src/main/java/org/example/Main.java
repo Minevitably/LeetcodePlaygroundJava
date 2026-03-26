@@ -1,8 +1,18 @@
 package org.example;
 
 class Solution {
-    public boolean isSameAfterReversals(int num) {
-        return num == 0 || num % 10 != 0;
+    public String capitalizeTitle(String title) {
+        String[] tokens = title.split(" ");
+
+        for (int i = 0; i < tokens.length; i++) {
+            tokens[i] = tokens[i].toLowerCase();
+            if (tokens[i].length() > 2) {
+                tokens[i] = String.valueOf(tokens[i].charAt(0)).toUpperCase() + 
+                            tokens[i].substring(1);
+            }
+        }
+
+        return String.join(" ", tokens);
     }
 }
 
