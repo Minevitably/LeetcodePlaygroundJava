@@ -61,6 +61,8 @@
         <module>Q2119-ANumberAfterADoubleReversal</module>
         <module>Q2124-CheckIfAllAsAppearsBeforeAllBs</module>
         <module>Q2129-CapitalizeTheTitle</module>
+        <module>Q2133-CheckIfEveryRowAndColumnContainsAllNumbers</module>
+        <module>Q2138-DivideAStringIntoGroupsOfSizeK</module>
     </modules>
 
     <properties>
