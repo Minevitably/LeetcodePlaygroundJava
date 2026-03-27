@@ -1,18 +1,19 @@
 package org.example;
 
 class Solution {
-    public String capitalizeTitle(String title) {
-        String[] tokens = title.split(" ");
-
-        for (int i = 0; i < tokens.length; i++) {
-            tokens[i] = tokens[i].toLowerCase();
-            if (tokens[i].length() > 2) {
-                tokens[i] = String.valueOf(tokens[i].charAt(0)).toUpperCase() + 
-                            tokens[i].substring(1);
-            }
+    public String[] divideString(String s, int k, char fill) {
+        int len = s.length();
+        if (len % k != 0) {
+            s += String.valueOf(fill).repeat(k - len % k);
+            len = s.length();
+        }
+        int n = len / k;
+        String[] ans = new String[n];
+        for (int i = 0; i < n; i++) {
+            ans[i] = s.substring(i * k, i * k + k);
         }
 
-        return String.join(" ", tokens);
+        return ans;
     }
 }
 
