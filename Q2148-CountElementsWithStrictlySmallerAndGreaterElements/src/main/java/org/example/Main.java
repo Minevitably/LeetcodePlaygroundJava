@@ -1,19 +1,20 @@
 package org.example;
 
+import java.util.Arrays;
+
 class Solution {
-    public String[] divideString(String s, int k, char fill) {
-        int len = s.length();
-        if (len % k != 0) {
-            s += String.valueOf(fill).repeat(k - len % k);
-            len = s.length();
-        }
-        int n = len / k;
-        String[] ans = new String[n];
-        for (int i = 0; i < n; i++) {
-            ans[i] = s.substring(i * k, i * k + k);
+    public int countElements(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length;
+        int count = 0;
+
+        for (int i = 1; i < n - 1; i++) {
+            if (nums[i] > nums[0] && nums[i] < nums[n - 1]) {
+                count++;
+            }
         }
 
-        return ans;
+        return count;
     }
 }
 
