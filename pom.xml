@@ -63,6 +63,8 @@
         <module>Q2129-CapitalizeTheTitle</module>
         <module>Q2133-CheckIfEveryRowAndColumnContainsAllNumbers</module>
         <module>Q2138-DivideAStringIntoGroupsOfSizeK</module>
+        <module>Q2144-MinimumCostOfBuyingCandiesWithDiscount</module>
+        <module>Q2148-CountElementsWithStrictlySmallerAndGreaterElements</module>
     </modules>
 
     <properties>
