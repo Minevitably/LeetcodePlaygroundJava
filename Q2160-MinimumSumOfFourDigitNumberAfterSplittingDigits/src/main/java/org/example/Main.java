@@ -3,18 +3,18 @@ package org.example;
 import java.util.Arrays;
 
 class Solution {
-    public int countElements(int[] nums) {
-        Arrays.sort(nums);
-        int n = nums.length;
-        int count = 0;
+    public int minimumSum(int num) {
+        int[] digits = new int[4];
+        int i = 0;
 
-        for (int i = 1; i < n - 1; i++) {
-            if (nums[i] > nums[0] && nums[i] < nums[n - 1]) {
-                count++;
-            }
+        while (num > 0) {
+            digits[i] = num % 10;
+            i++;
+            num /= 10;
         }
-
-        return count;
+        Arrays.sort(digits);
+        
+        return (digits[0] * 10 + digits[2]) + (digits[1] * 10 + digits[3]);
     }
 }
 
