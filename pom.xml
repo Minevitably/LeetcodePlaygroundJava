@@ -65,6 +65,8 @@
         <module>Q2138-DivideAStringIntoGroupsOfSizeK</module>
         <module>Q2144-MinimumCostOfBuyingCandiesWithDiscount</module>
         <module>Q2148-CountElementsWithStrictlySmallerAndGreaterElements</module>
+        <module>Q2154-KeepMultiplyingFoundValuesByTwo</module>
+        <module>Q2160-MinimumSumOfFourDigitNumberAfterSplittingDigits</module>
     </modules>
 
     <properties>
