@@ -1,20 +1,19 @@
 package org.example;
 
-import java.util.Arrays;
-
 class Solution {
-    public int minimumSum(int num) {
-        int[] digits = new int[4];
-        int i = 0;
+    public int countOperations(int num1, int num2) {
+        int count = 0;
 
-        while (num > 0) {
-            digits[i] = num % 10;
-            i++;
-            num /= 10;
+        while (num1 != 0 && num2 != 0) {
+            if (num1 >= num2) {
+                num1 -= num2;
+            } else {
+                num2 -= num1;
+            }
+            count++;
         }
-        Arrays.sort(digits);
-        
-        return (digits[0] * 10 + digits[2]) + (digits[1] * 10 + digits[3]);
+
+        return count;
     }
 }
 
