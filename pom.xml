@@ -67,6 +67,8 @@
         <module>Q2148-CountElementsWithStrictlySmallerAndGreaterElements</module>
         <module>Q2154-KeepMultiplyingFoundValuesByTwo</module>
         <module>Q2160-MinimumSumOfFourDigitNumberAfterSplittingDigits</module>
+        <module>Q2164-SortEvenAndOddIndicesIndependently</module>
+        <module>Q2169-CountOperationsToObtainZero</module>
     </modules>
 
     <properties>
