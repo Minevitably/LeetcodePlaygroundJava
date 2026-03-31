@@ -69,6 +69,8 @@
         <module>Q2160-MinimumSumOfFourDigitNumberAfterSplittingDigits</module>
         <module>Q2164-SortEvenAndOddIndicesIndependently</module>
         <module>Q2169-CountOperationsToObtainZero</module>
+        <module>Q2176-CountEqualAndDivisiblePairsInAnArray</module>
+        <module>Q2180-CountIntegersWithEvenDigitSum</module>
     </modules>
 
     <properties>
