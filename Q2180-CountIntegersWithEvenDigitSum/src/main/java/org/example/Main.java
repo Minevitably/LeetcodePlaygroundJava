@@ -1,16 +1,18 @@
 package org.example;
 
 class Solution {
-    public int countOperations(int num1, int num2) {
+    public int countEven(int num) {
         int count = 0;
 
-        while (num1 != 0 && num2 != 0) {
-            if (num1 >= num2) {
-                num1 -= num2;
-            } else {
-                num2 -= num1;
+        for (int i = 1; i <= num; i++) {
+            String s = String.valueOf(i);
+            int sum = 0;
+            for (char ch: s.toCharArray()) {
+                sum += (int)(ch - '0');
             }
-            count++;
+            if (sum % 2 == 0) {
+                count++;
+            }
         }
 
         return count;
