@@ -1,21 +1,26 @@
 package org.example;
 
-class Solution {
-    public int countEven(int num) {
-        int count = 0;
+import java.util.HashMap;
+import java.util.Map;
 
-        for (int i = 1; i <= num; i++) {
-            String s = String.valueOf(i);
-            int sum = 0;
-            for (char ch: s.toCharArray()) {
-                sum += (int)(ch - '0');
-            }
-            if (sum % 2 == 0) {
-                count++;
+class Solution {
+    public int mostFrequent(int[] nums, int key) {
+        Map<Integer, Integer> cnt = new HashMap<>();
+        int maxCount = 0;
+        int ans = -1;
+        int n = nums.length;
+
+        for (int i = 1; i < n; i++) {
+            if (nums[i - 1] == key) {
+                cnt.put(nums[i], cnt.getOrDefault(nums[i], 0) + 1);
+                if (cnt.get(nums[i]) > maxCount) {
+                    ans = nums[i];
+                    maxCount = cnt.get(nums[i]);
+                }
             }
         }
 
-        return count;
+        return ans;
     }
 }
 
