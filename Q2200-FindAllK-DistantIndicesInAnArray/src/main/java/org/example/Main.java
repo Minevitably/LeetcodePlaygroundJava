@@ -1,21 +1,18 @@
 package org.example;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 class Solution {
-    public int mostFrequent(int[] nums, int key) {
-        Map<Integer, Integer> cnt = new HashMap<>();
-        int maxCount = 0;
-        int ans = -1;
+    public List<Integer> findKDistantIndices(int[] nums, int key, int k) {
+        List<Integer> ans = new ArrayList<>();
         int n = nums.length;
+        int j = 0;
 
-        for (int i = 1; i < n; i++) {
-            if (nums[i - 1] == key) {
-                cnt.put(nums[i], cnt.getOrDefault(nums[i], 0) + 1);
-                if (cnt.get(nums[i]) > maxCount) {
-                    ans = nums[i];
-                    maxCount = cnt.get(nums[i]);
+        for (int i = 0; i < n; i++) {
+            if (nums[i] == key) {
+                for (j = Math.max(j, i - k); j <= Math.min(n - 1, i + k); j++) {
+                    ans.add(j);
                 }
             }
         }
