@@ -1,23 +1,38 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
 
 class Solution {
-    public List<Integer> findKDistantIndices(int[] nums, int key, int k) {
-        List<Integer> ans = new ArrayList<>();
+    public int countHillValley(int[] nums) {
+        int i = 0;
         int n = nums.length;
-        int j = 0;
+        int count = 0;
 
-        for (int i = 0; i < n; i++) {
-            if (nums[i] == key) {
-                for (j = Math.max(j, i - k); j <= Math.min(n - 1, i + k); j++) {
-                    ans.add(j);
-                }
+        while (i < n) {
+            int l = i - 1;
+            int r = i + 1;
+            while (l >= 0 && nums[i] == nums[l]) {
+                l--;
             }
+            while (r < n && nums[i] == nums[r]) {
+                r++;
+            }
+
+            if (l < 0 || r > n - 1) {
+                i++;
+                continue;
+            }
+
+            if ((nums[l] > nums[i] && nums[r] > nums[i]) || 
+                (nums[l] < nums[i] && nums[r] < nums[i])) {
+                count++;
+                i = r;
+                continue;
+            }
+
+            i++;
         }
 
-        return ans;
+        return count;
     }
 }
 
