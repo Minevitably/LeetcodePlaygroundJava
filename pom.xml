@@ -13,6 +13,8 @@
         <module>Q2190-MostFrequentNumberFollowingKeyInAnArray</module>
         <module>Q2194-CellsInARangeOnAnExcelSheet</module>
         <module>Q2200-FindAllK-DistantIndicesInAnArray</module>
+        <module>Q2206-DivideArrayIntoEqualPairs</module>
+        <module>Q2210-CountHillsAndValleysInAnArray</module>
     </modules>
 
     <properties>
