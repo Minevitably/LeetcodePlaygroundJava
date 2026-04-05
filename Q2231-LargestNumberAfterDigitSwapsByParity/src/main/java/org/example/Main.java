@@ -1,17 +1,42 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
 
 class Solution {
-    public int minBitFlips(int start, int goal) {
-        int count = 0;
-
-        for (int i = 0; i < 32; i++) {
-            if ((start >> i & 1) != (goal >> i & 1)) {
-                count++;
+    public int largestInteger(int num) {
+        List<Integer> odds = new ArrayList<>();
+        List<Integer> evens = new ArrayList<>();
+        List<Integer> digits = new ArrayList<>();
+        int ans = 0;
+        while (num > 0) {
+            int digit = num % 10;
+            digits.add(digit);
+            if (digit % 2 == 0) {
+                evens.add(digit);
+            } else {
+                odds.add(digit);
             }
+            num /= 10;
         }
 
-        return count;
+        odds.sort(null);
+        evens.sort(null);
+        int n = digits.size();
+        int j = 0;
+        int k = 0;
+        for (int i = 0; i < n; i++) {
+            if (digits.get(i) % 2 == 0) {
+                digits.set(i, evens.get(j));
+                j++;
+            } else {
+                digits.set(i, odds.get(k));
+                k++;
+            }
+            ans += digits.get(i) * Math.pow(10, i);
+        }
+
+        return ans;
     }
 }
 
