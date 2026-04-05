@@ -2,34 +2,13 @@ package org.example;
 
 
 class Solution {
-    public int countHillValley(int[] nums) {
-        int i = 0;
-        int n = nums.length;
+    public int minBitFlips(int start, int goal) {
         int count = 0;
 
-        while (i < n) {
-            int l = i - 1;
-            int r = i + 1;
-            while (l >= 0 && nums[i] == nums[l]) {
-                l--;
-            }
-            while (r < n && nums[i] == nums[r]) {
-                r++;
-            }
-
-            if (l < 0 || r > n - 1) {
-                i++;
-                continue;
-            }
-
-            if ((nums[l] > nums[i] && nums[r] > nums[i]) || 
-                (nums[l] < nums[i] && nums[r] < nums[i])) {
+        for (int i = 0; i < 32; i++) {
+            if ((start >> i & 1) != (goal >> i & 1)) {
                 count++;
-                i = r;
-                continue;
             }
-
-            i++;
         }
 
         return count;
