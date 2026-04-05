@@ -17,6 +17,8 @@
         <module>Q2210-CountHillsAndValleysInAnArray</module>
         <module>Q2215-FindTheDifferenceOfTwoArrays</module>
         <module>Q2220-MinimumBitFlipsToConvertNumber</module>
+        <module>Q2224-MinimumNumberOfOperationsToConvertTime</module>
+        <module>Q2231-LargestNumberAfterDigitSwapsByParity</module>
     </modules>
 
     <properties>
