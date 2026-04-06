@@ -19,6 +19,8 @@
         <module>Q2220-MinimumBitFlipsToConvertNumber</module>
         <module>Q2224-MinimumNumberOfOperationsToConvertTime</module>
         <module>Q2231-LargestNumberAfterDigitSwapsByParity</module>
+        <module>Q2235-AddTwoIntegers</module>
+        <module>Q2236-RootEqualsSumOfChildren</module>
     </modules>
 
     <properties>
