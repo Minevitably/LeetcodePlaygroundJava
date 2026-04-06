@@ -1,42 +1,22 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
+
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
 
 class Solution {
-    public int largestInteger(int num) {
-        List<Integer> odds = new ArrayList<>();
-        List<Integer> evens = new ArrayList<>();
-        List<Integer> digits = new ArrayList<>();
-        int ans = 0;
-        while (num > 0) {
-            int digit = num % 10;
-            digits.add(digit);
-            if (digit % 2 == 0) {
-                evens.add(digit);
-            } else {
-                odds.add(digit);
-            }
-            num /= 10;
-        }
-
-        odds.sort(null);
-        evens.sort(null);
-        int n = digits.size();
-        int j = 0;
-        int k = 0;
-        for (int i = 0; i < n; i++) {
-            if (digits.get(i) % 2 == 0) {
-                digits.set(i, evens.get(j));
-                j++;
-            } else {
-                digits.set(i, odds.get(k));
-                k++;
-            }
-            ans += digits.get(i) * Math.pow(10, i);
-        }
-
-        return ans;
+    public boolean checkTree(TreeNode root) {
+        return root.val == root.left.val + root.right.val;
     }
 }
 
