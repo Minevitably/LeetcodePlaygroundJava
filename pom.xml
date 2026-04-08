@@ -23,6 +23,8 @@
         <module>Q2236-RootEqualsSumOfChildren</module>
         <module>Q2239-FindClosestNumberToZero</module>
         <module>Q2243-CalculateDigitSumOfAString</module>
+        <module>Q2248-IntersectionOfMultipleArrays</module>
+        <module>Q2255-CountPrefixesOfAGivenString</module>
     </modules>
 
     <properties>
