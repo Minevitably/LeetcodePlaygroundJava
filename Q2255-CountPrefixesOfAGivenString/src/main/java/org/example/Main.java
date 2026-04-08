@@ -1,29 +1,17 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
 
 class Solution {
-    public String digitSum(String s, int k) {
+    public int countPrefixes(String[] words, String s) {
+        int count = 0;
 
-        while (s.length() > k) {
-            List<String> groups = new ArrayList<>();
-            int n = s.length();
-            for (int i = 0; i < n; i += k) {
-                int j = i + k <= n ? i + k : n;
-                groups.add(s.substring(i, j));
-            }
-            s = "";
-            for (String g: groups) {
-                int sum = 0;
-                for (char ch: g.toCharArray()) {
-                    sum += (int)(ch - '0');
-                }
-                s += String.valueOf(sum);
+        for (String word: words) {
+            if (s.indexOf(word) == 0) {
+                count++;
             }
         }
 
-        return s;
+        return count;
     }
 }
 
