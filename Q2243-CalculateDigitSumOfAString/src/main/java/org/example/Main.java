@@ -1,22 +1,29 @@
 package org.example;
 
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
+import java.util.ArrayList;
+import java.util.List;
 
 class Solution {
-    public boolean checkTree(TreeNode root) {
-        return root.val == root.left.val + root.right.val;
+    public String digitSum(String s, int k) {
+
+        while (s.length() > k) {
+            List<String> groups = new ArrayList<>();
+            int n = s.length();
+            for (int i = 0; i < n; i += k) {
+                int j = i + k <= n ? i + k : n;
+                groups.add(s.substring(i, j));
+            }
+            s = "";
+            for (String g: groups) {
+                int sum = 0;
+                for (char ch: g.toCharArray()) {
+                    sum += (int)(ch - '0');
+                }
+                s += String.valueOf(sum);
+            }
+        }
+
+        return s;
     }
 }
 
