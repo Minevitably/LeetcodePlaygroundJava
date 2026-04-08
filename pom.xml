@@ -21,6 +21,8 @@
         <module>Q2231-LargestNumberAfterDigitSwapsByParity</module>
         <module>Q2235-AddTwoIntegers</module>
         <module>Q2236-RootEqualsSumOfChildren</module>
+        <module>Q2239-FindClosestNumberToZero</module>
+        <module>Q2243-CalculateDigitSumOfAString</module>
     </modules>
 
     <properties>
