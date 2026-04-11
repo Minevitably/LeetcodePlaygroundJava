@@ -25,6 +25,8 @@
         <module>Q2243-CalculateDigitSumOfAString</module>
         <module>Q2248-IntersectionOfMultipleArrays</module>
         <module>Q2255-CountPrefixesOfAGivenString</module>
+        <module>Q2259-RemoveDigitFromNumberToMaximizeResult</module>
+        <module>Q2264-Largest-3-Same-DigitNumberInString</module>
     </modules>
 
     <properties>
