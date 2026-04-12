@@ -1,24 +1,24 @@
 package org.example;
 
-import java.util.Arrays;
 
 class Solution {
-    public boolean digitCount(String num) {
-        int[] cnt = new int[10];
-        Arrays.fill(cnt, 0);
+    public int minMaxGame(int[] nums) {
+        int n = nums.length;
 
-        int n = num.length();
-
-        for (char c: num.toCharArray()) {
-            cnt[(int)(c - '0')]++;
-        }
-        for (int i = 0; i < n; i++) {
-            if (cnt[i] != (int)(num.charAt(i) - '0')) {
-                return false;
+        while (n != 1) {
+            n = n / 2;
+            int[] newNums = new int[n];
+            for (int i = 0; i < n; i++) {
+                if (i % 2 == 0) {
+                    newNums[i] = Math.min(nums[2 * i], nums[2 * i + 1]);
+                } else {
+                    newNums[i] = Math.max(nums[2 * i], nums[2 * i + 1]);
+                }
             }
+            nums = newNums;
         }
 
-        return true;
+        return nums[0];
     }
 }
 
