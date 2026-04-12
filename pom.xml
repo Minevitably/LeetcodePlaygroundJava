@@ -31,6 +31,8 @@
         <module>Q2273-FindResultantArrayAfterRemovingAnagrams</module>
         <module>Q2278-PercentageOfLetterInString</module>
         <module>Q2283-CheckIfNumberHasEqualDigitCountAndDigitValue</module>
+        <module>Q2287-RearrangeCharactersToMakeTargetString</module>
+        <module>Q2293-MinMaxGame</module>
     </modules>
 
     <properties>
