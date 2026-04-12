@@ -1,35 +1,24 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 class Solution {
-    public List<String> removeAnagrams(String[] words) {
-        int n = words.length;
-        String[] sortedWords = new String[n];
-        List<String> ans = new ArrayList<>();
-        Set<Integer> indices = new HashSet<>();
+    public boolean digitCount(String num) {
+        int[] cnt = new int[10];
+        Arrays.fill(cnt, 0);
 
-        for (int i = 0; i < n; i++) {
-          char[] charArray = words[i].toCharArray();
-          Arrays.sort(charArray);
-          sortedWords[i] = new String(charArray);
-        }
-        for (int i = 1; i < n; i++) {
-            if (sortedWords[i].equals(sortedWords[i - 1])) {
-                indices.add(i);
-            }
+        int n = num.length();
+
+        for (char c: num.toCharArray()) {
+            cnt[(int)(c - '0')]++;
         }
         for (int i = 0; i < n; i++) {
-            if (!indices.contains(i)) {
-                ans.add(words[i]);
+            if (cnt[i] != (int)(num.charAt(i) - '0')) {
+                return false;
             }
         }
 
-        return ans;
+        return true;
     }
 }
 
