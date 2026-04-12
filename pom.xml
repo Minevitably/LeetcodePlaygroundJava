@@ -29,6 +29,8 @@
         <module>Q2264-Largest-3-Same-DigitNumberInString</module>
         <module>Q2269-FindTheK-BeautyOfANumber</module>
         <module>Q2273-FindResultantArrayAfterRemovingAnagrams</module>
+        <module>Q2278-PercentageOfLetterInString</module>
+        <module>Q2283-CheckIfNumberHasEqualDigitCountAndDigitValue</module>
     </modules>
 
     <properties>
