@@ -1,16 +1,31 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 class Solution {
-    public String largestGoodInteger(String num) {
-        String ans = "";
-        int n = num.length();
+    public List<String> removeAnagrams(String[] words) {
+        int n = words.length;
+        String[] sortedWords = new String[n];
+        List<String> ans = new ArrayList<>();
+        Set<Integer> indices = new HashSet<>();
 
-        for (int i = 0; i < n - 2; i++) {
-            if (num.substring(i, i + 3).equals(String.valueOf(num.charAt(i)).repeat(3))) {
-                if (ans.isEmpty() || ans.compareTo(num.substring(i, i + 3)) < 0) {
-                    ans = num.substring(i, i + 3);
-                }
+        for (int i = 0; i < n; i++) {
+          char[] charArray = words[i].toCharArray();
+          Arrays.sort(charArray);
+          sortedWords[i] = new String(charArray);
+        }
+        for (int i = 1; i < n; i++) {
+            if (sortedWords[i].equals(sortedWords[i - 1])) {
+                indices.add(i);
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            if (!indices.contains(i)) {
+                ans.add(words[i]);
             }
         }
 
