@@ -27,6 +27,8 @@
         <module>Q2255-CountPrefixesOfAGivenString</module>
         <module>Q2259-RemoveDigitFromNumberToMaximizeResult</module>
         <module>Q2264-Largest-3-Same-DigitNumberInString</module>
+        <module>Q2269-FindTheK-BeautyOfANumber</module>
+        <module>Q2273-FindResultantArrayAfterRemovingAnagrams</module>
     </modules>
 
     <properties>
