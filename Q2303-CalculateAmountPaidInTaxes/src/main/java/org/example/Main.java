@@ -2,23 +2,28 @@ package org.example;
 
 
 class Solution {
-    public int minMaxGame(int[] nums) {
-        int n = nums.length;
+    public double calculateTax(int[][] brackets, int income) {
+        double tax = 0.0f;
+        int n = brackets.length;
+        int prevUpper = 0;
 
-        while (n != 1) {
-            n = n / 2;
-            int[] newNums = new int[n];
-            for (int i = 0; i < n; i++) {
-                if (i % 2 == 0) {
-                    newNums[i] = Math.min(nums[2 * i], nums[2 * i + 1]);
-                } else {
-                    newNums[i] = Math.max(nums[2 * i], nums[2 * i + 1]);
-                }
+        for (int i = 0; i < n; i++) {
+            int upperi = brackets[i][0];
+            int percenti = brackets[i][1];
+
+            if (income > upperi) {
+                // normal
+                tax += (double)(upperi - prevUpper) * percenti / 100;
+            } else {
+                // last
+                tax += (double)(income - prevUpper) * percenti / 100;
+                break;
             }
-            nums = newNums;
+
+            prevUpper = upperi;
         }
 
-        return nums[0];
+        return tax;
     }
 }
 
