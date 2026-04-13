@@ -33,6 +33,8 @@
         <module>Q2283-CheckIfNumberHasEqualDigitCountAndDigitValue</module>
         <module>Q2287-RearrangeCharactersToMakeTargetString</module>
         <module>Q2293-MinMaxGame</module>
+        <module>Q2299-StrongPasswordCheckerII</module>
+        <module>Q2303-CalculateAmountPaidInTaxes</module>
     </modules>
 
     <properties>
