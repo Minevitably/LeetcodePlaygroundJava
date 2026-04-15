@@ -37,6 +37,8 @@
         <module>Q2303-CalculateAmountPaidInTaxes</module>
         <module>Q2309-GreatestEnglishLetterInUpperAndLowerCase</module>
         <module>Q2315-CountAsterisks</module>
+        <module>Q2319-CheckIfMatrixIsX-Matrix</module>
+        <module>Q2325-DecodeTheMessage</module>
     </modules>
 
     <properties>
