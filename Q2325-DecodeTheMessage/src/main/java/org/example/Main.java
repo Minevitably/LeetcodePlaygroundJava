@@ -1,24 +1,30 @@
 package org.example;
 
+import java.util.Arrays;
 
 class Solution {
-    public int countAsterisks(String s) {
-        String[] words = s.split("\\|");
-        int i = 0;
-        int count = 0;
+    public String decodeMessage(String key, String message) {
+        char[] keyMap = new char[26];
+        Arrays.fill(keyMap, '*');
+        int n = message.length();
+        int j = 0;
+        StringBuilder ans = new StringBuilder();
 
-        for (String word: words) {
-            if (i % 2 == 0) {
-                for (char ch: word.toCharArray()) {
-                    if (ch == '*') {
-                        count++;
-                    }
-                }
+        for (char ch: key.toCharArray()) {
+            if (Character.isLetter(ch) && keyMap[(int)(ch - 'a')] == '*') {
+                keyMap[(int)(ch - 'a')] = (char)(j + 'a');
+                j++;
             }
-            i++;
+        }
+        for (int i = 0; i < n; i++) {
+            if (Character.isLetter(message.charAt(i))) {
+                ans.append(keyMap[(int)(message.charAt(i) - 'a')]);
+            } else {
+                ans.append(' ');
+            }
         }
 
-        return count;
+        return ans.toString();
     }
 }
 
