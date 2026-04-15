@@ -35,6 +35,8 @@
         <module>Q2293-MinMaxGame</module>
         <module>Q2299-StrongPasswordCheckerII</module>
         <module>Q2303-CalculateAmountPaidInTaxes</module>
+        <module>Q2309-GreatestEnglishLetterInUpperAndLowerCase</module>
+        <module>Q2315-CountAsterisks</module>
     </modules>
 
     <properties>
