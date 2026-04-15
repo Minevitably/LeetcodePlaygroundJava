@@ -2,28 +2,23 @@ package org.example;
 
 
 class Solution {
-    public double calculateTax(int[][] brackets, int income) {
-        double tax = 0.0f;
-        int n = brackets.length;
-        int prevUpper = 0;
+    public int countAsterisks(String s) {
+        String[] words = s.split("\\|");
+        int i = 0;
+        int count = 0;
 
-        for (int i = 0; i < n; i++) {
-            int upperi = brackets[i][0];
-            int percenti = brackets[i][1];
-
-            if (income > upperi) {
-                // normal
-                tax += (double)(upperi - prevUpper) * percenti / 100;
-            } else {
-                // last
-                tax += (double)(income - prevUpper) * percenti / 100;
-                break;
+        for (String word: words) {
+            if (i % 2 == 0) {
+                for (char ch: word.toCharArray()) {
+                    if (ch == '*') {
+                        count++;
+                    }
+                }
             }
-
-            prevUpper = upperi;
+            i++;
         }
 
-        return tax;
+        return count;
     }
 }
 
@@ -31,7 +26,6 @@ class Solution {
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.printf("Hello and welcome!");
