@@ -39,6 +39,8 @@
         <module>Q2315-CountAsterisks</module>
         <module>Q2319-CheckIfMatrixIsX-Matrix</module>
         <module>Q2325-DecodeTheMessage</module>
+        <module>Q2331-EvaluateBooleanBinaryTree</module>
+        <module>Q2335-MinimumAmountOfTimeToFillCups</module>
     </modules>
 
     <properties>
