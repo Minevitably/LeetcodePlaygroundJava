@@ -3,28 +3,19 @@ package org.example;
 import java.util.Arrays;
 
 class Solution {
-    public String decodeMessage(String key, String message) {
-        char[] keyMap = new char[26];
-        Arrays.fill(keyMap, '*');
-        int n = message.length();
-        int j = 0;
-        StringBuilder ans = new StringBuilder();
+    public int fillCups(int[] amount) {
+        int ans = 0;
 
-        for (char ch: key.toCharArray()) {
-            if (Character.isLetter(ch) && keyMap[(int)(ch - 'a')] == '*') {
-                keyMap[(int)(ch - 'a')] = (char)(j + 'a');
-                j++;
-            }
-        }
-        for (int i = 0; i < n; i++) {
-            if (Character.isLetter(message.charAt(i))) {
-                ans.append(keyMap[(int)(message.charAt(i) - 'a')]);
-            } else {
-                ans.append(' ');
-            }
+        
+
+        while (Arrays.stream(amount).max().getAsInt() > 0) {
+            Arrays.sort(amount);
+            amount[2]--;
+            amount[1]--;
+            ans++;
         }
 
-        return ans.toString();
+        return ans;
     }
 }
 
