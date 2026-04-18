@@ -41,6 +41,8 @@
         <module>Q2325-DecodeTheMessage</module>
         <module>Q2331-EvaluateBooleanBinaryTree</module>
         <module>Q2335-MinimumAmountOfTimeToFillCups</module>
+        <module>Q2341-MaximumNumberOfPairsInArray</module>
+        <module>Q2347-BestPokerHand</module>
     </modules>
 
     <properties>
