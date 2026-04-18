@@ -43,6 +43,8 @@
         <module>Q2335-MinimumAmountOfTimeToFillCups</module>
         <module>Q2341-MaximumNumberOfPairsInArray</module>
         <module>Q2347-BestPokerHand</module>
+        <module>Q2351-FirstLetterToAppearTwice</module>
+        <module>Q2357-MakeArrayZeroBySubtractingEqualAmounts</module>
     </modules>
 
     <properties>
