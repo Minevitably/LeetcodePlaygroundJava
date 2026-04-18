@@ -1,43 +1,48 @@
 package org.example;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.lang.Math;
 
 class Solution {
-    public String bestHand(int[] ranks, char[] suits) {
-        int n = suits.length;
+    private int maxElement(int[] nums) {
+        int m = -1;
+        if (nums == null || nums.length == 0) {
+            return m;
+        }
 
-        // 1. Flush
-        boolean flush = true;
-        for (int i = 1; i < n; i++) {
-            if (suits[i - 1] != suits[i]) {
-                flush = false;
+        m = nums[0];
+        for (int num: nums) {
+            m = Math.max(m, num);
+        }
+
+        return m;
+    }
+
+    public int minimumOperations(int[] nums) {
+        int count = 0;
+
+        while (maxElement(nums) != 0) {
+            int x = -1;
+            for (int num: nums) {
+                if (num == 0) {
+                    continue;
+                }
+                if (x == -1) {
+                    x = num;
+                }
+                x = Math.min(x, num);
             }
-        }
-        if (flush) {
-            return "Flush";
-        }
 
-        // 2. Three of a Kind
-        int[] cnt = new int[14];
-        Arrays.fill(cnt, 0);
-        for (int rank: ranks) {
-            cnt[rank]++;
-        }
-        for (int c: cnt) {
-            if (c >= 3) {
-                return "Three of a Kind";
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] != 0) {
+                    nums[i] -= x;
+                }
             }
+            count++;
         }
 
-        // 3. Pair
-        for (int c: cnt) {
-            if (c == 2) {
-                return "Pair";
-            }
-        }
-
-        // 4. High Card
-        return "High Card";
+        return count;
     }
 }
 
