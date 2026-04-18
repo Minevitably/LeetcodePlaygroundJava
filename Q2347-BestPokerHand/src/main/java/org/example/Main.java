@@ -3,19 +3,41 @@ package org.example;
 import java.util.Arrays;
 
 class Solution {
-    public int fillCups(int[] amount) {
-        int ans = 0;
+    public String bestHand(int[] ranks, char[] suits) {
+        int n = suits.length;
 
-        
-
-        while (Arrays.stream(amount).max().getAsInt() > 0) {
-            Arrays.sort(amount);
-            amount[2]--;
-            amount[1]--;
-            ans++;
+        // 1. Flush
+        boolean flush = true;
+        for (int i = 1; i < n; i++) {
+            if (suits[i - 1] != suits[i]) {
+                flush = false;
+            }
+        }
+        if (flush) {
+            return "Flush";
         }
 
-        return ans;
+        // 2. Three of a Kind
+        int[] cnt = new int[14];
+        Arrays.fill(cnt, 0);
+        for (int rank: ranks) {
+            cnt[rank]++;
+        }
+        for (int c: cnt) {
+            if (c >= 3) {
+                return "Three of a Kind";
+            }
+        }
+
+        // 3. Pair
+        for (int c: cnt) {
+            if (c == 2) {
+                return "Pair";
+            }
+        }
+
+        // 4. High Card
+        return "High Card";
     }
 }
 
