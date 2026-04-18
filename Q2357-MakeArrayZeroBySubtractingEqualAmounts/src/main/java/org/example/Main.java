@@ -1,7 +1,5 @@
 package org.example;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.lang.Math;
 
 class Solution {
