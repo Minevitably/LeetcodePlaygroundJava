@@ -47,6 +47,8 @@
         <module>Q2357-MakeArrayZeroBySubtractingEqualAmounts</module>
         <module>Q2363-MergeSimilarItems</module>
         <module>Q2367-NumberOfArithmeticTriplets</module>
+        <module>Q2373-LargestLocalValuesInAMatrix</module>
+        <module>Q2379-MinimumRecolorsToGetKConsecutiveBlackBlocks</module>
     </modules>
 
     <properties>
