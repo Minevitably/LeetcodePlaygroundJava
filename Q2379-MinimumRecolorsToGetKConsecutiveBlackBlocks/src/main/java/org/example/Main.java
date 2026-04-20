@@ -2,24 +2,28 @@ package org.example;
 
 
 class Solution {
-    public int arithmeticTriplets(int[] nums, int diff) {
-        int n = nums.length;
-        int count = 0;
+    public int minimumRecolors(String blocks, int k) {
+        int n = blocks.length();
+        int minWhite = -1;
+        int white = 0;
 
-        for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (nums[j] - nums[i] != diff) {
-                    continue;
-                }
-                for (int k = j + 1; k < n; k++) {
-                    if (nums[k] - nums[j] == diff) {
-                        count++;
-                    }
-                }
+        for (int i = 0; i < k; i++) {
+            if (blocks.charAt(i) == 'W') {
+                white++;
             }
         }
+        minWhite = white;
+        for (int i = k; i < n; i++) {
+            if (blocks.charAt(i) == 'W') {
+                white++;
+            }
+            if (blocks.charAt(i - k) == 'W') {
+                white--;
+            }
+            minWhite = Math.min(minWhite, white);
+        }
 
-        return count;
+        return minWhite;
     }
 }
 
