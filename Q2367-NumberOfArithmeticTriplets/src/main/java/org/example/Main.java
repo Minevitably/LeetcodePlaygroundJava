@@ -1,43 +1,22 @@
 package org.example;
 
-import java.lang.Math;
 
 class Solution {
-    private int maxElement(int[] nums) {
-        int m = -1;
-        if (nums == null || nums.length == 0) {
-            return m;
-        }
-
-        m = nums[0];
-        for (int num: nums) {
-            m = Math.max(m, num);
-        }
-
-        return m;
-    }
-
-    public int minimumOperations(int[] nums) {
+    public int arithmeticTriplets(int[] nums, int diff) {
+        int n = nums.length;
         int count = 0;
 
-        while (maxElement(nums) != 0) {
-            int x = -1;
-            for (int num: nums) {
-                if (num == 0) {
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (nums[j] - nums[i] != diff) {
                     continue;
                 }
-                if (x == -1) {
-                    x = num;
-                }
-                x = Math.min(x, num);
-            }
-
-            for (int i = 0; i < nums.length; i++) {
-                if (nums[i] != 0) {
-                    nums[i] -= x;
+                for (int k = j + 1; k < n; k++) {
+                    if (nums[k] - nums[j] == diff) {
+                        count++;
+                    }
                 }
             }
-            count++;
         }
 
         return count;
