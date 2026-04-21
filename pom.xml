@@ -49,6 +49,8 @@
         <module>Q2367-NumberOfArithmeticTriplets</module>
         <module>Q2373-LargestLocalValuesInAMatrix</module>
         <module>Q2379-MinimumRecolorsToGetKConsecutiveBlackBlocks</module>
+        <module>Q2383-MinimumHoursOfTrainingToWinACompetition</module>
+        <module>Q2389-LongestSubsequenceWithLimitedSum</module>
     </modules>
 
     <properties>
