@@ -1,29 +1,27 @@
 package org.example;
 
+import java.util.Arrays;
 
 class Solution {
-    public int minimumRecolors(String blocks, int k) {
-        int n = blocks.length();
-        int minWhite = -1;
-        int white = 0;
+    public int[] answerQueries(int[] nums, int[] queries) {
+        int n = nums.length;
+        int m = queries.length;
+        Arrays.sort(nums);; // must be here
 
-        for (int i = 0; i < k; i++) {
-            if (blocks.charAt(i) == 'W') {
-                white++;
-            }
+        var answer = new int[m];
+
+        for (int i = 1; i < n; i++) {
+            nums[i] += nums[i - 1];
         }
-        minWhite = white;
-        for (int i = k; i < n; i++) {
-            if (blocks.charAt(i) == 'W') {
-                white++;
+        for (int i = 0; i < m; i++) {
+            int j = 0;
+            while (j < n && nums[j] <= queries[i]) {
+                j++;
             }
-            if (blocks.charAt(i - k) == 'W') {
-                white--;
-            }
-            minWhite = Math.min(minWhite, white);
+            answer[i] = j;
         }
 
-        return minWhite;
+        return answer;
     }
 }
 
