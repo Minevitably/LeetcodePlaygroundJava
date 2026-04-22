@@ -51,6 +51,8 @@
         <module>Q2379-MinimumRecolorsToGetKConsecutiveBlackBlocks</module>
         <module>Q2383-MinimumHoursOfTrainingToWinACompetition</module>
         <module>Q2389-LongestSubsequenceWithLimitedSum</module>
+        <module>Q2395-FindSubarraysWithEqualSum</module>
+        <module>Q2399-CheckDistancesBetweenSameLetters</module>
     </modules>
 
     <properties>
