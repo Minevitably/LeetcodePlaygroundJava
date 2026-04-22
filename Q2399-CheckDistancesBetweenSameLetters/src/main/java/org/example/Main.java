@@ -1,27 +1,20 @@
 package org.example;
 
-import java.util.Arrays;
 
 class Solution {
-    public int[] answerQueries(int[] nums, int[] queries) {
-        int n = nums.length;
-        int m = queries.length;
-        Arrays.sort(nums);; // must be here
-
-        var answer = new int[m];
-
-        for (int i = 1; i < n; i++) {
-            nums[i] += nums[i - 1];
-        }
-        for (int i = 0; i < m; i++) {
-            int j = 0;
-            while (j < n && nums[j] <= queries[i]) {
-                j++;
+    public boolean checkDistances(String s, int[] distance) {
+        int n = distance.length;
+        
+        for (int i = 0; i < n; i++) {
+            char c = (char)(i + 'a');
+            int l = s.indexOf(c);
+            int r = s.lastIndexOf(c);
+            if (l != r && r - l - 1 != distance[i]) {
+                return false;
             }
-            answer[i] = j;
         }
 
-        return answer;
+        return true;
     }
 }
 
