@@ -53,6 +53,8 @@
         <module>Q2389-LongestSubsequenceWithLimitedSum</module>
         <module>Q2395-FindSubarraysWithEqualSum</module>
         <module>Q2399-CheckDistancesBetweenSameLetters</module>
+        <module>Q2404-MostFrequentEvenElement</module>
+        <module>Q2409-CountDaysSpentTogether</module>
     </modules>
 
     <properties>
