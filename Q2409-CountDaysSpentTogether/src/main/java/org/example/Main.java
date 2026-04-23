@@ -2,19 +2,32 @@ package org.example;
 
 
 class Solution {
-    public boolean checkDistances(String s, int[] distance) {
-        int n = distance.length;
-        
-        for (int i = 0; i < n; i++) {
-            char c = (char)(i + 'a');
-            int l = s.indexOf(c);
-            int r = s.lastIndexOf(c);
-            if (l != r && r - l - 1 != distance[i]) {
-                return false;
-            }
-        }
+    private int getDay(String date) {
+        int[] days = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int month = Integer.valueOf(date.substring(0, 2));
+        int day = Integer.valueOf(date.substring(3, 5));
+        int count = 0;
 
-        return true;
+        for (int i = 0; i < month - 1; i++) {
+            count += days[i];
+        }
+        count += day;
+
+        return count;
+    }
+
+    public int countDaysTogether(String arriveAlice, String leaveAlice, String arriveBob, String leaveBob) {
+        int arriveAliceDay = getDay(arriveAlice);
+        int leaveAliceDay = getDay(leaveAlice);
+        int arriveBobDay = getDay(arriveBob);
+        int leaveBobDay = getDay(leaveBob);
+        int start = Math.max(arriveAliceDay, arriveBobDay);
+        int end = Math.min(leaveAliceDay, leaveBobDay);
+
+        if (end < start) {
+            return 0;
+        }
+        return end - start + 1;
     }
 }
 
