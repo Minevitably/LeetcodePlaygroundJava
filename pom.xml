@@ -55,6 +55,8 @@
         <module>Q2399-CheckDistancesBetweenSameLetters</module>
         <module>Q2404-MostFrequentEvenElement</module>
         <module>Q2409-CountDaysSpentTogether</module>
+        <module>Q2413-SmallestEvenMultiple</module>
+        <module>Q2418-SortThePeople</module>
     </modules>
 
     <properties>
