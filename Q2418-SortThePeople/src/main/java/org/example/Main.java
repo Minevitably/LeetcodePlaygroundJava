@@ -1,33 +1,22 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.TreeMap;
 
 class Solution {
-    private int getDay(String date) {
-        int[] days = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        int month = Integer.valueOf(date.substring(0, 2));
-        int day = Integer.valueOf(date.substring(3, 5));
-        int count = 0;
+    public String[] sortPeople(String[] names, int[] heights) {
+        var heightNameMap = new TreeMap<Integer, String>();
+        int n = names.length;
 
-        for (int i = 0; i < month - 1; i++) {
-            count += days[i];
+        for (int i = 0; i < n; i++) {
+            heightNameMap.put(heights[i], names[i]);
         }
-        count += day;
+        // do not use `List.of()` .
+        var ans = new ArrayList<>(heightNameMap.values());
+        Collections.reverse(ans);
 
-        return count;
-    }
-
-    public int countDaysTogether(String arriveAlice, String leaveAlice, String arriveBob, String leaveBob) {
-        int arriveAliceDay = getDay(arriveAlice);
-        int leaveAliceDay = getDay(leaveAlice);
-        int arriveBobDay = getDay(arriveBob);
-        int leaveBobDay = getDay(leaveBob);
-        int start = Math.max(arriveAliceDay, arriveBobDay);
-        int end = Math.min(leaveAliceDay, leaveBobDay);
-
-        if (end < start) {
-            return 0;
-        }
-        return end - start + 1;
+        return ans.toArray(new String[0]);
     }
 }
 
