@@ -57,6 +57,8 @@
         <module>Q2409-CountDaysSpentTogether</module>
         <module>Q2413-SmallestEvenMultiple</module>
         <module>Q2418-SortThePeople</module>
+        <module>Q2423-RemoveLetterToEqualizeFrequency</module>
+        <module>Q2427-NumberOfCommonFactors</module>
     </modules>
 
     <properties>
