@@ -1,22 +1,25 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.TreeMap;
 
 class Solution {
-    public String[] sortPeople(String[] names, int[] heights) {
-        var heightNameMap = new TreeMap<Integer, String>();
-        int n = names.length;
-
-        for (int i = 0; i < n; i++) {
-            heightNameMap.put(heights[i], names[i]);
+    private int gcd(int a, int b) {
+        if (b == 0) {
+            return a;
         }
-        // do not use `List.of()` .
-        var ans = new ArrayList<>(heightNameMap.values());
-        Collections.reverse(ans);
+        return gcd(b, a % b);
+    }
+    
+    public int commonFactors(int a, int b) {
+        int maxFactor = gcd(a, b);
+        int count = 0;
 
-        return ans.toArray(new String[0]);
+        for (int i = 1; i <= maxFactor; i++) {
+            if(a % i == 0 && b % i == 0) {
+                count++;
+            }
+        }
+
+        return count;
     }
 }
 
