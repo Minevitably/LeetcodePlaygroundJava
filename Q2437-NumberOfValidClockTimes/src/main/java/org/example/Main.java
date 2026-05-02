@@ -2,24 +2,43 @@ package org.example;
 
 
 class Solution {
-    private int gcd(int a, int b) {
-        if (b == 0) {
-            return a;
-        }
-        return gcd(b, a % b);
-    }
-    
-    public int commonFactors(int a, int b) {
-        int maxFactor = gcd(a, b);
-        int count = 0;
+    public int countTime(String time) {
+        var h = time.substring(0, 2).toCharArray();
+        var m = time.substring(3, 5).toCharArray();
+        int hCount = 1;
+        int m0Count = 1;
+        int m1Count = 1;
 
-        for (int i = 1; i <= maxFactor; i++) {
-            if(a % i == 0 && b % i == 0) {
-                count++;
+        if (h[0] == '?' && h[1] == '?') {
+            hCount = 24;
+        }
+        if (h[0] == '?' && h[1] != '?') {
+            if (h[1] > '3') {
+                hCount = 2;
+            } else {
+                hCount = 3;
             }
         }
+        if (h[0] != '?' && h[1] == '?') {
+            if (h[0] == '2') {
+                hCount = 4;
+            } else {
+                hCount = 10;
+            }
 
-        return count;
+        }
+        if (h[0] != '?' && h[1] != '?') {
+            hCount = 1;
+        }
+
+        if (m[0] == '?') {
+            m0Count = 6;
+        }
+        if (m[1] == '?') {
+            m1Count = 10;
+        }
+
+        return hCount * m0Count * m1Count;
     }
 }
 
