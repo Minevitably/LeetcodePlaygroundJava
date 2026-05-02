@@ -61,6 +61,8 @@
         <module>Q2427-NumberOfCommonFactors</module>
         <module>Q2432-TheEmployeeThatWorkedOnTheLongestTask</module>
         <module>Q2437-NumberOfValidClockTimes</module>
+        <module>Q2441-LargestPositiveIntegerThatExistsWithItsNegative</module>
+        <module>Q2446-DetermineIfTwoEventsHaveConflict</module>
     </modules>
 
     <properties>
