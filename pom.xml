@@ -59,6 +59,8 @@
         <module>Q2418-SortThePeople</module>
         <module>Q2423-RemoveLetterToEqualizeFrequency</module>
         <module>Q2427-NumberOfCommonFactors</module>
+        <module>Q2432-TheEmployeeThatWorkedOnTheLongestTask</module>
+        <module>Q2437-NumberOfValidClockTimes</module>
     </modules>
 
     <properties>
