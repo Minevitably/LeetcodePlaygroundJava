@@ -2,23 +2,18 @@ package org.example;
 
 
 class Solution {
-    private int timestamp(String time) {
-        return Integer.valueOf(time.substring(0, 2)) * 60 + 
-               Integer.valueOf(time.substring(3, 5));
-    }
-    public boolean haveConflict(String[] event1, String[] event2) {
-        int s1 = timestamp(event1[0]);
-        int e1 = timestamp(event1[1]);
-        int s2 = timestamp(event2[0]);
-        int e2 = timestamp(event2[1]);
+    public int averageValue(int[] nums) {
+        double sum = 0;
+        int n = 0;
 
-        if (s1 <= s2 && s2 <= e1) {
-            return true;
+        for (int num: nums) {
+            if (num % 3 == 0 && num % 2 == 0) {
+                sum += num;
+                n++;
+            }
         }
-        if (s2 <= s1 && s1 <= e2) {
-            return true;
-        }
-        return false;
+
+        return n == 0 ? 0 : (int)(sum / n);
     }
 }
 
