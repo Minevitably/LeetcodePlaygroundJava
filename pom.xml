@@ -63,6 +63,8 @@
         <module>Q2437-NumberOfValidClockTimes</module>
         <module>Q2441-LargestPositiveIntegerThatExistsWithItsNegative</module>
         <module>Q2446-DetermineIfTwoEventsHaveConflict</module>
+        <module>Q2451-OddStringDifference</module>
+        <module>Q2455-AverageValueOfEvenNumbersThatAreDivisibleByThree</module>
     </modules>
 
     <properties>
