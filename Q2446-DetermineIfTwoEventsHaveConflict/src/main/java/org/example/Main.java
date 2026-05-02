@@ -2,43 +2,23 @@ package org.example;
 
 
 class Solution {
-    public int countTime(String time) {
-        var h = time.substring(0, 2).toCharArray();
-        var m = time.substring(3, 5).toCharArray();
-        int hCount = 1;
-        int m0Count = 1;
-        int m1Count = 1;
+    private int timestamp(String time) {
+        return Integer.valueOf(time.substring(0, 2)) * 60 + 
+               Integer.valueOf(time.substring(3, 5));
+    }
+    public boolean haveConflict(String[] event1, String[] event2) {
+        int s1 = timestamp(event1[0]);
+        int e1 = timestamp(event1[1]);
+        int s2 = timestamp(event2[0]);
+        int e2 = timestamp(event2[1]);
 
-        if (h[0] == '?' && h[1] == '?') {
-            hCount = 24;
+        if (s1 <= s2 && s2 <= e1) {
+            return true;
         }
-        if (h[0] == '?' && h[1] != '?') {
-            if (h[1] > '3') {
-                hCount = 2;
-            } else {
-                hCount = 3;
-            }
+        if (s2 <= s1 && s1 <= e2) {
+            return true;
         }
-        if (h[0] != '?' && h[1] == '?') {
-            if (h[0] == '2') {
-                hCount = 4;
-            } else {
-                hCount = 10;
-            }
-
-        }
-        if (h[0] != '?' && h[1] != '?') {
-            hCount = 1;
-        }
-
-        if (m[0] == '?') {
-            m0Count = 6;
-        }
-        if (m[1] == '?') {
-            m1Count = 10;
-        }
-
-        return hCount * m0Count * m1Count;
+        return false;
     }
 }
 
