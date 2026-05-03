@@ -1,19 +1,22 @@
 package org.example;
 
+import java.util.Arrays;
+import java.util.HashSet;
 
 class Solution {
-    public int averageValue(int[] nums) {
-        double sum = 0;
-        int n = 0;
+    public int distinctAverages(int[] nums) {
+        var ans = new HashSet<Integer>();
 
-        for (int num: nums) {
-            if (num % 3 == 0 && num % 2 == 0) {
-                sum += num;
-                n++;
-            }
+        Arrays.sort(nums);
+        int l = 0; 
+        int r = nums.length - 1;
+        while (l < r) {
+            ans.add(nums[l] + nums[r]);
+            l++;
+            r--;
         }
 
-        return n == 0 ? 0 : (int)(sum / n);
+        return ans.size();
     }
 }
 
