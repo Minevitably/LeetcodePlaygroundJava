@@ -65,6 +65,8 @@
         <module>Q2446-DetermineIfTwoEventsHaveConflict</module>
         <module>Q2451-OddStringDifference</module>
         <module>Q2455-AverageValueOfEvenNumbersThatAreDivisibleByThree</module>
+        <module>Q2460-ApplyOperationsToAnArray</module>
+        <module>Q2465-NumberOfDistinctAverages</module>
     </modules>
 
     <properties>
