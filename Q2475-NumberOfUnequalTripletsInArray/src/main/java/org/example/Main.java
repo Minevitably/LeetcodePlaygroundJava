@@ -1,22 +1,22 @@
 package org.example;
 
-import java.util.Arrays;
-import java.util.HashSet;
 
 class Solution {
-    public int distinctAverages(int[] nums) {
-        var ans = new HashSet<Integer>();
+    public int unequalTriplets(int[] nums) {
+        int n = nums.length;
+        int count = 0;
 
-        Arrays.sort(nums);
-        int l = 0; 
-        int r = nums.length - 1;
-        while (l < r) {
-            ans.add(nums[l] + nums[r]);
-            l++;
-            r--;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                for (int k = j + 1; k < n; k++) {
+                    if (nums[i] != nums[k] && nums[j] != nums[i] && nums[k] != nums[j]) {
+                        count++;
+                    }
+                }
+            }
         }
 
-        return ans.size();
+        return count;
     }
 }
 
