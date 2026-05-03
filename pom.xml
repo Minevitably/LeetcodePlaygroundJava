@@ -67,6 +67,8 @@
         <module>Q2455-AverageValueOfEvenNumbersThatAreDivisibleByThree</module>
         <module>Q2460-ApplyOperationsToAnArray</module>
         <module>Q2465-NumberOfDistinctAverages</module>
+        <module>Q2469-ConvertTheTemperature</module>
+        <module>Q2475-NumberOfUnequalTripletsInArray</module>
     </modules>
 
     <properties>
