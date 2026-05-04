@@ -1,22 +1,18 @@
 package org.example;
 
-import java.util.Arrays;
-import java.util.HashSet;
 
 class Solution {
-    public int distinctAverages(int[] nums) {
-        var ans = new HashSet<Integer>();
-
-        Arrays.sort(nums);
-        int l = 0; 
-        int r = nums.length - 1;
-        while (l < r) {
-            ans.add(nums[l] + nums[r]);
-            l++;
-            r--;
+    public int pivotInteger(int n) {
+        int y = n * n + n;
+        if (y % 2 != 0) {
+            return -1;
         }
-
-        return ans.size();
+        y /= 2;
+        int x = (int)(Math.sqrt(y));
+        if (x * x != y) {
+            return -1;
+        }
+        return x;
     }
 }
 
