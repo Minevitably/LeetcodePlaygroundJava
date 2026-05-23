@@ -15,6 +15,7 @@
         <module>Q2496-MaximumValueOfAStringInAnArray</module>
         <module>Q2500-DeleteGreatestValueInEachRow</module>
         <module>Q2506-CountPairsOfSimilarStrings</module>
+        <module>Q2511-MaximumEnemyFortsThatCanBeCaptured</module>
     </modules>
 
     <properties>
