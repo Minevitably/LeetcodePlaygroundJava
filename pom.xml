@@ -20,6 +20,7 @@
         <module>Q2520-CountTheDigitsThatDivideANumber</module>
         <module>Q2525-CategorizeBoxAccordingToCriteria</module>
         <module>Q2529-MaximumCountOfPositiveIntegerAndNegativeInteger</module>
+        <module>Q2535-DifferenceBetweenElementSumAndDigitSumOfAnArray</module>
     </modules>
 
     <properties>
