@@ -19,6 +19,7 @@
         <module>Q2515-ShortestDistanceToTargetStringInACircularArray</module>
         <module>Q2520-CountTheDigitsThatDivideANumber</module>
         <module>Q2525-CategorizeBoxAccordingToCriteria</module>
+        <module>Q2529-MaximumCountOfPositiveIntegerAndNegativeInteger</module>
     </modules>
 
     <properties>
