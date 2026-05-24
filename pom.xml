@@ -16,6 +16,7 @@
         <module>Q2500-DeleteGreatestValueInEachRow</module>
         <module>Q2506-CountPairsOfSimilarStrings</module>
         <module>Q2511-MaximumEnemyFortsThatCanBeCaptured</module>
+        <module>Q2515-ShortestDistanceToTargetStringInACircularArray</module>
     </modules>
 
     <properties>
