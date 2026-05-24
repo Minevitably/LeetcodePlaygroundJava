@@ -22,6 +22,7 @@
         <module>Q2529-MaximumCountOfPositiveIntegerAndNegativeInteger</module>
         <module>Q2535-DifferenceBetweenElementSumAndDigitSumOfAnArray</module>
         <module>Q2540-MinimumCommonValue</module>
+        <module>Q2544-AlternatingDigitSum</module>
     </modules>
 
     <properties>
