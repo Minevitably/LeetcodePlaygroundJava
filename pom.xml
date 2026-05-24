@@ -17,6 +17,7 @@
         <module>Q2506-CountPairsOfSimilarStrings</module>
         <module>Q2511-MaximumEnemyFortsThatCanBeCaptured</module>
         <module>Q2515-ShortestDistanceToTargetStringInACircularArray</module>
+        <module>Q2520-CountTheDigitsThatDivideANumber</module>
     </modules>
 
     <properties>
