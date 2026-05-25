@@ -24,6 +24,7 @@
         <module>Q2540-MinimumCommonValue</module>
         <module>Q2544-AlternatingDigitSum</module>
         <module>Q2549-CountDistinctNumbersOnBoard</module>
+        <module>Q2553-SeparateTheDigitsInAnArray</module>
     </modules>
 
     <properties>
