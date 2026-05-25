@@ -23,6 +23,7 @@
         <module>Q2535-DifferenceBetweenElementSumAndDigitSumOfAnArray</module>
         <module>Q2540-MinimumCommonValue</module>
         <module>Q2544-AlternatingDigitSum</module>
+        <module>Q2549-CountDistinctNumbersOnBoard</module>
     </modules>
 
     <properties>
